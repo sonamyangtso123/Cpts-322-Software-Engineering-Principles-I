@@ -9,6 +9,6 @@ This project is deginated...
 | |Madison Jane Holcomb | |
 | |Kadupitige Ashi Chamarasinghe | |
 | |Sydney Erin Gormley | |
-| |Navroop Kaur | |
-| |Sonam Yangtso | |
+| |Navroop Kaur ||
+|11689463 |Sonam Yangtso |syangtso|
 |11701083 |Jongyun Kim |jkim4 |
