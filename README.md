@@ -6,7 +6,7 @@ This project is deginated...
 ## Team Infomation
 | WSU ID | Names | EECS ID |
 |:-----|:--------|:---------|
-| |Madison Jane Holcomb | |
+|11514680 |Madison Jane Holcomb |mholcomb |
 | |Kadupitige Ashi Chamarasinghe | |
 | |Sydney Erin Gormley | |
 | |Navroop Kaur ||
