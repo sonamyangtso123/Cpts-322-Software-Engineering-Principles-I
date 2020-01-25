@@ -12,6 +12,3 @@ This project is designed to be a business supplement for managing gyms. The name
 |11628495 |Navroop Kaur |nkaur |
 |11689463 |Sonam Yangtso |syangtso |
 |11701083 |Jongyun Kim |jkim4 |
-It's Ashi
-It's Navroop
-It's Syd!
