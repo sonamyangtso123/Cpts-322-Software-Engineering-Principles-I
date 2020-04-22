@@ -39,6 +39,7 @@ userSchema.pre("save", function (next) {
   var user = this;
 
   if (user.isModified("password")) {
+    // encrypt user password
     bcrypt.genSalt(saltRounds, function (err, salt) {
       if (err) return next(err);
       bcrypt.hash(user.password, salt, function (err, hash) {
@@ -53,6 +54,7 @@ userSchema.pre("save", function (next) {
 });
 
 userSchema.methods.comparePassword = function (plainPassword, cb) {
+  // compare plain password and encrypted password
   bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
@@ -61,12 +63,24 @@ userSchema.methods.comparePassword = function (plainPassword, cb) {
 
 userSchema.methods.generateToken = function (cb) {
   var user = this;
+  // generate token by jsonwebtoken(jwt)
+  // user._id + "com.gymgenie.www" -> token
   var token = jwt.sign(user._id.toHexString(), "com.gymgenie.www");
 
   user.token = token;
   user.save(function (err, user) {
     if (err) return cb(err);
     cb(null, user);
+  });
+};
+
+userSchema.statics.findByToken = function (token, cb) {
+  var user = this;
+  jwt.verify(token, "com.gymgenie.www", function (err, decoded) {
+    user.findOne({ _id: decoded, token: token }, function (err, user) {
+      if (err) return cb(err);
+      cb(null, user);
+    });
   });
 };
 
