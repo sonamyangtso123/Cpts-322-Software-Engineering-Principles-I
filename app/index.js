@@ -22,12 +22,42 @@ mongoose
 
 app.get("/", (req, res) => res.send("HELLO, CGM GYM"));
 
-app.post("/register", (req, res) => {
+app.post("/user/register", (req, res) => {
   // put user infomation into database when customer sign in
   const user = new User(req.body);
   user.save((err, user) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).json({ success: true });
+  });
+});
+
+app.post("/user/login", (req, res) => {
+  // find request email in the database
+  User.findOne({ email: req.body.email }, (err, user) => {
+    if (!user) {
+      return res.json({
+        loginSuccess: false,
+        message: "The email doesn't exist.",
+      });
+    }
+    // if it found, check password correct
+    user.comparePassword(req.body.password, (err, isMatch) => {
+      if (!isMatch) {
+        return res.json({
+          loginSuccess: false,
+          message: "Incorrect password.",
+        });
+      }
+      user.generateToken((err, user) => {
+        if (err) {
+          return res.status(400).send(err);
+        }
+        res.cookie("x_auth", user.token).status(200).json({
+          loginSuccess: true,
+          userID: user._id,
+        });
+      });
+    });
   });
 });
 
