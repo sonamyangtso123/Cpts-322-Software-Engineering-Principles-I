@@ -13,7 +13,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <NaviBar />
-      <div style={{height:"60px"}}></div>
+      {/* <div style={{height:"60px"}}></div> */}
       <Switch>
         <Route exact path="/" component={Auth(MainPage, null)} />
         <Route exact path="/login" component={Auth(LoginPage, false)} />
