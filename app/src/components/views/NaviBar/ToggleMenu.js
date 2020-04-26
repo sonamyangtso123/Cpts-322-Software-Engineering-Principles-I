@@ -19,13 +19,15 @@ function ToggleMenu(props) {
   if (user.userData && !user.userData.isAuth) {
     return (
       <>
-        <a className="nav-link text-white" href="/login">
-          Sign in
-        </a>
-
-        <a type="button" className="btn btn-outline-info" href="/register">
-          Sign up
-        </a>
+        <div className="form-inline my-2 my-lg-0">
+          <a className="nav-link text-secondary" href="/login">
+            Sign in
+          </a>
+          <a type="button" className="btn btn-outline-info" href="/register">
+            Sign up
+          </a>
+          
+        </div>
       </>
     );
   } else {
@@ -43,4 +45,4 @@ function ToggleMenu(props) {
   }
 }
 
-export default withRouter(ToggleMenu)
+export default withRouter(ToggleMenu);

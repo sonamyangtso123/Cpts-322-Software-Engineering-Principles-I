@@ -1,51 +1,54 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
-import logo from "../../../../src/gym.png";
+import { Nav, Navbar } from "react-bootstrap";
 import ToggleMenu from "./ToggleMenu";
+import logo from "../../../../src/gym.png";
 
-function Navibar(props) {
+function Navibar2() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <a className="navbar-brand" href="/">
-            <img src={logo} width="30" height="30" alt="" />
-          </a>
-          <ul className="navbar-nav" style={{ padding: "0px 10px" }}>
-            <li className="nav-item active">
-              <a className="nav-link" href="/">
-                Home <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-        <form className="form-inline">
-          <ToggleMenu />
-        </form>
-      </nav>
+      <style type="text/css">
+        {`
+            .nav-link {
+                margin-right :10px;
+            }
+        `}
+      </style>
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar.Brand href="/">
+          <img
+            alt=""
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />{" "}
+          CGM GYM
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="About">Gym Genie</Nav.Link>
+            <Nav.Link href="#pricing">About us</Nav.Link>
+            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown> */}
+          </Nav>
+          <Nav>
+            <ToggleMenu />
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </>
   );
 }
 
-export default withRouter(Navibar);
+export default Navibar2;

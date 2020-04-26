@@ -1,28 +1,50 @@
 import React from "react";
 import Footer from "./Footer";
+import { Jumbotron, Button, Container } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
+
+const image1 = require("../../../assets/images/person-holding-barbell-841130.jpg");
+const bImage = {
+  backgroundImage: `url(${image1})`,
+  backgroundSize: "100%",
+  backgroundRepeat: "no-repeat",
+};
+console.log(image1);
 
 function LandingPage(props) {
   return (
     <>
-      <main className="container-fluid">
-        <div className="container">
-          <h1 className="mt-5">Sticky footer with fixed navbar</h1>
-          <p className="lead">
-            Pin a footer to the bottom of the viewport in desktop browsers with
-            this custom HTML and CSS. A fixed navbar has been added with{" "}
-            <code>padding-top: 60px;</code> on the{" "}
-            <code>main &gt; .container</code>.
-          </p>
-          <p>
-            Back to{" "}
-            <a href="/docs/4.4/examples/sticky-footer/">
-              the default sticky footer
-            </a>{" "}
-            minus the navbar.
-          </p>
-        </div>
-      </main>
+    <style type="text/css">
+        {`
+            div.container {
+              color:white;
+            }
+            h1.main-message{
+              text-align: center;
+              font-size: 70px;
+            }
+            p.main-message{
+              text-align: center;
+              font-size: 30px;
+            }
+            .btn-primary{
+              text-align: center;
+            }
+            
+        `}
+      </style>
+      <Jumbotron fluid style={bImage}>
+          <Container >
+            <h1 className="display-4">CGM Gym</h1>
+            <p className="lead">
+              STAY IN, STAY FIT<br/>
+              WITH CGM LIVE<br/>
+              FREE FOR ALL MEMBER
+            </p>
+            <Button variant="primary">Learn more</Button>
+          </Container>
+      </Jumbotron>
+
       <Footer />
     </>
   );

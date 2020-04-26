@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Alert, Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_action";
 import { withRouter } from "react-router-dom";
@@ -10,6 +11,7 @@ function LoginPage(props) {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
+  const [isError, setisError] = useState(false);
 
   const onEmailHandler = (event) => {
     setEmail(event.currentTarget.value);
@@ -32,6 +34,7 @@ function LoginPage(props) {
       if (response.payload.loginSuccess) {
         props.history.push("/");
       } else {
+        setisError(!response.payload.loginSuccess);
         setErrorMessage("Email or Password is invalid");
       }
     });
@@ -39,51 +42,61 @@ function LoginPage(props) {
 
   return (
     <>
-      <div className="text-center">
-        <form className="form-signin" onSubmit={onSubmitHandler}>
+      <style type="text/css">
+        {`  
+            .form-container .centered{
+              text-align: center; 
+            }
+            .form-container{
+              width: 100%;
+              max-width: 330px;
+              margin-top: 3rem;
+              margin-left: auto;
+              margin-right: auto;
+              position: relative;
+              box-sizing: border-box;
+              height: auto;
+              padding: 10px;
+            }
+            .alert-danger{
+              font-size:12px;
+            }
+        `}
+      </style>
+      <div className="form-container">
+        <Form onSubmit={onSubmitHandler}>
+          <div className="centered">
           <img className="mb-4" src={logo} alt="" width="72" height="72" />
           <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-          <label htmlFor="inputEmail" className="sr-only">
-            Email address
-          </label>
-          <input
-            type="email"
-            id="top"
-            className="form-control top"
-            placeholder="Email address"
-            // required=""
-            autoFocus=""
-            value={Email}
-            onChange={onEmailHandler}
-          />
-          <label htmlFor="inputPassword" className="sr-only">
-            Password
-          </label>
-          <input
-            type="password"
-            id="bottom"
-            className="form-control bottom"
-            placeholder="Password"
-            // required=""
-            value={Password}
-            onChange={onPasswordHandler}
-          />
-          {/* <div className="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me" /> Remember me
-            </label>
-          </div> */}
-          <textarea
-            type="text"
-            className="error-message"
-            value={ErrorMessage}
-            readOnly
-          />
-          <button className="btn btn-lg btn-primary btn-block" type="submit">
+          </div>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Label srOnly="true">Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              onChange={onEmailHandler}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label srOnly="true">Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={onPasswordHandler}
+            />
+          </Form.Group>
+
+          <Alert variant="danger" show={isError}>
+            {ErrorMessage}
+          </Alert>
+          <Button variant="primary" type="submit" block>
             Sign in
-          </button>
-          <p className="mt-5 mb-3 text-muted">© 2020</p>
-        </form>
+          </Button>
+          <div className="centered">
+            <p className="mt-5 mb-3 text-muted">© 2020</p>
+          </div>
+        </Form>
       </div>
     </>
   );

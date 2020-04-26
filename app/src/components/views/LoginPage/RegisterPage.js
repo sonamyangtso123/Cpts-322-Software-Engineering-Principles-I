@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import moment from "moment";
+import { Alert, Form, Button, Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { loginUser, registerUser } from "../../../_actions/user_action";
 import { withRouter } from "react-router-dom";
@@ -14,6 +14,8 @@ function RegisterPage(props) {
   const [Password, setPassword] = useState("");
   const [Confirm, setConfirm] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
+  const [Check, setCheck] = useState("");
+  const [isError, setisError] = useState(false);
 
   const onFirstnameHandler = (event) => {
     setFirstname(event.currentTarget.value);
@@ -33,26 +35,39 @@ function RegisterPage(props) {
   const onConfirmHandler = (event) => {
     setConfirm(event.currentTarget.value);
   };
+  const onCheckHandler = (event) => {
+    setCheck(event.currentTarget.value);
+  };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
     if (!Firstname.trim() || !Lastname.trim()) {
+      setisError(true);
+      console.log(Check);
       return setErrorMessage("Name is required");
     }
     if (!Email.trim()) {
+      setisError(true);
       return setErrorMessage("Email is required");
     }
     if (!checkPasswordPattern(Password)) {
+      setisError(true);
       return setErrorMessage(
         "Password must contain in at least 6 characters,\nlncluding UPPER/lowercase and numbers"
       );
     }
     if (!Confirm.trim()) {
+      setisError(true);
       return setErrorMessage("Confrim Password is required");
     }
     if (Password !== Confirm) {
-      return setErrorMessage("The password do not match.");
+      setisError(true);
+      return setErrorMessage("Passward does not matched");
+    }
+    if (!Check) {
+      setisError(true);
+      return setErrorMessage("Check the agreement");
     }
 
     let body = {
@@ -65,91 +80,120 @@ function RegisterPage(props) {
     dispatch(registerUser(body)).then((response) => {
       if (response.payload.success) {
         dispatch(loginUser(body)).then((response) => {
-          console.log(response.payload.loginSuccess)
+          console.log(response.payload.loginSuccess);
           if (response.payload.loginSuccess) {
             props.history.push("/");
           } else {
-            return setErrorMessage("Failed to sign in");
+            setisError(true);
+            return setErrorMessage("Please try later");
           }
         });
       } else {
-        return setErrorMessage("Failed to sign up");
+        setisError(true);
+        return setErrorMessage("Email already exists");
       }
     });
   };
 
   return (
     <>
-      <div className="text-center">
-        <form className="form-signin" onSubmit={onSubmitHandler}>
-          <img className="mb-4" src={logo} alt="" width="72" height="72" />
-          <h1 className="h3 mb-3 font-weight-normal">Create new account</h1>
-          <div className="row text-left">
-            <div className="col-6">
-              <label className="label-signup" htmlFor="inputFirstname">
-                First name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                value={Firstname}
-                onChange={onFirstnameHandler}
-              ></input>
-            </div>
-            <div className="col-6">
-              <label className="label-signup" htmlFor="inputLastname">
-                Last name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                value={Lastname}
-                onChange={onLastnameHandler}
-              ></input>
-            </div>
-            <div className="col-12">
-              <label className="label-signup" htmlFor="inputEmail">
-                Email address
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                value={Email}
-                onChange={onEmailHandler}
-              />
-              <label className="label-signup" htmlFor="inputPassword">
-                Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                value={Password}
-                onChange={onPasswordHandler}
-              />
-              <label className="label-signup" htmlFor="inputPassword">
-                Confirm Password
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                value={Confirm}
-                onChange={onConfirmHandler}
-              />
-            </div>
-            <div className="col-12">
-              <textarea
-                type="text"
-                className="error-message"
-                value={ErrorMessage}
-                readOnly
-              />
-            </div>
+      <style type="text/css">
+        {`
+            .form-container .centered{
+              text-align: center; 
+            }
+            .form-container{
+              width: 100%;
+              max-width: 330px;
+              margin-top: 3rem;
+              margin-left: auto;
+              margin-right: auto;
+              position: relative;
+              box-sizing: border-box;
+              height: auto;
+              padding: 10px;
+            }
+            label.form-label{
+              text-align: left;
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+            .alert-danger{
+              font-size:12px;
+            }
+        `}
+      </style>
+      <div className="form-container">
+        <Form onSubmit={onSubmitHandler}>
+          <div className="centered">
+            <img className="mb-4" src={logo} alt="" width="72" height="72" />
+            <h1 className="h3 mb-3 font-weight-normal">Create new account</h1>
           </div>
-          <button className="btn btn-lg btn-primary btn-block" type="submit">
-            Register
-          </button>
-          <p className="mt-5 mb-3 text-muted">© 2020</p>
-        </form>
+          <Form.Row>
+            <Form.Group as={Col} controlId="formGridFirst">
+              <Form.Label>First name</Form.Label>
+              <Form.Control
+                type="text"
+                // placeholder="John"
+                onChange={onFirstnameHandler}
+              />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="formGridLast">
+              <Form.Label>Last name</Form.Label>
+              <Form.Control
+                type="text"
+                // placeholder="Doe"
+                onChange={onLastnameHandler}
+              />
+            </Form.Group>
+          </Form.Row>
+
+          <Form.Group controlId="formGridEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              // placeholder="Enter email"
+              type="email"
+              onChange={onEmailHandler}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formGridPassword">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              // placeholder="Password"
+              type="password"
+              onChange={onPasswordHandler}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formGridConfirm">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control
+              // placeholder="Confrim Password"
+              type="password"
+              onChange={onConfirmHandler}
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formBasicCheckbox">
+            <Form.Check
+              type="checkbox"
+              label="I agree CGM term"
+              onChange={onCheckHandler}
+            />
+          </Form.Group>
+
+          <Alert variant="danger" show={isError}>
+            {ErrorMessage}
+          </Alert>
+            <Button variant="primary" type="submit" block>
+              Register
+            </Button>
+          <div className="centered">
+            <p className="mt-5 mb-3 text-muted">© 2020</p>
+          </div>
+        </Form>
       </div>
     </>
   );
@@ -157,10 +201,15 @@ function RegisterPage(props) {
 
 function checkPasswordPattern(str) {
   var pattern1 = /[0-9]/;
-  var pattern2 = /[a-z]/
+  var pattern2 = /[a-z]/;
   var pattern3 = /[A-Z]/;
 
-  if (pattern1.test(str) && pattern2.test(str) && pattern3.test(str) &&  str.length > 5) {
+  if (
+    pattern1.test(str) &&
+    pattern2.test(str) &&
+    pattern3.test(str) &&
+    str.length > 5
+  ) {
     return true;
   } else {
     return false;
