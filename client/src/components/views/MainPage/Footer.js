@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer id="footer">
       <div className="container">
-        <span className="text-muted">2020 Powered by React Express</span>
+        <span className="text-muted">© 2020 CGM-GYMTRACKER Powered by React Express</span>
       </div>
     </footer>
   );

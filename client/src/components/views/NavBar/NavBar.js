@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import logo from "../../../assets/logo512.png";
+import { Nav, Navbar } from "react-bootstrap";
+import logo from "../../../assets/gym.png";
 import ToggleMenu from "./ToggleMenu";
 
 function NavBar() {
@@ -13,7 +13,8 @@ function NavBar() {
         }
         `}
       </style>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar.Brand href="/">
         <img
           alt=""
           src={logo}
@@ -21,13 +22,13 @@ function NavBar() {
           height="30"
           className="d-inline-block align-top"
         />{" "}
-        <Navbar.Brand href="/">React Bootstrap</Navbar.Brand>
+        CGM GYM</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Feature</Nav.Link>
-            <Nav.Link href="/">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <Nav.Link href="/">Gym Genie</Nav.Link>
+            <Nav.Link href="/">About us</Nav.Link>
+            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -37,7 +38,7 @@ function NavBar() {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
           <Nav>
             <ToggleMenu/>
