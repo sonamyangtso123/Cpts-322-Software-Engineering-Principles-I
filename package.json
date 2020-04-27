@@ -1,0 +1,42 @@
+{
+  "name": "cgm-gymtracker",
+  "version": "1.0.0",
+  "description": "This project is designed to be a business supplement for managing gyms. The name of our app is \"Gym Genie\", it will help manage the various facilities as well as be an aid for members to set-up appointments with trainers. Because of this, our clients will be Gym faculty and Gym users. Some features we plan to include, but are not limited to, are: Authenticating users and faculty who want to use this service, a schedule of activities and training sessions that are available for gym users, functionality for gym faculty to add sessions (date, time, meeting location, description of session), membership options for users signing up (one month, half a year, a full year).",
+  "main": "index.js",
+  "engine": {
+    "node": "12.16.2",
+    "npm": "6.14.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js",
+    "frontend": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prfix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.eecs.wsu.edu:43689/cgm-gymtracker.git"
+  },
+  "author": "CGM",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.4.20",
+    "react-redux": "^5.0.7",
+    "saslprep": "^1.0.3",
+    "supports-color": "^7.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1"
+  }
+}
