@@ -3,7 +3,7 @@ import { Alert, Form, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_actions";
 import { withRouter } from "react-router-dom";
-import logo from "../../../assets/logo512.png";
+import logo from "../../../assets/gym.png";
 
 
 function LoginPage(props) {
