@@ -1,39 +1,135 @@
-﻿using GymGenie.UserPackage;
+﻿using GymGenie.user;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
-
 
 namespace GymGenie
 {
     class Program
     {
+        public static UserMgmt UM = new UserMgmt();
+
         public static void Main(string[] args)
         {
-            User u1 = new Admin("Andrew", "123456", "andrew@gmail.com");
-            User u2 = new Trainer("John", "123456", "john@gmail.com");
+            UM.PringUserList();
 
-            Console.WriteLine(u1);
-            Console.WriteLine(u2);
 
-            var users = new List<User>();
-            users.Add(u1);
-            users.Add(u2);
-            
+            bool isQuit = false;
+            string answer;
+            while (!isQuit)
+            {
+                answer = MainMenu();
+                User loggedinUser = null;
+                switch (answer)
+                {
+                    case "1":
+                        loggedinUser = LoginMenu();
+                        break;
+                    case "2":
+                        RegisterMenu();
+                        break;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Type wrong.");
+                        break;
+                }
 
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream("userList.bin", FileMode.Create, FileAccess.Write, FileShare.None);
-            formatter.Serialize(stream, users);
-            stream.Close();
+                if (loggedinUser != null)
+                {
+                    switch (loggedinUser.Role)
+                    {
+                        case 0:
+                            Console.WriteLine("you are admin.");
+                            break;
+                        case 1:
+                            Console.WriteLine("you are trainer.");
+                            break;
+                        case 2:
+                            Console.WriteLine("you are customer.");
+                            break;
+                    }
+                }
 
-            Stream stream2 = new FileStream("userList.bin", FileMode.Open, FileAccess.Read, FileShare.Read);
-            var users2 = (List<User>)formatter.Deserialize(stream2);
-            stream2.Close();
 
-            Console.WriteLine(users2[0].GetType());
-            Console.WriteLine(users2[1].GetType());
+
+                if (answer == "3")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Thanks for using Gym Genie.");
+                    isQuit = true;
+                }
+            }
+
+
+        }
+
+
+        public static string MainMenu()
+        {
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Gym Management App - Gym Genie");
+            Console.WriteLine("1. login");
+            Console.WriteLine("2. register");
+            Console.WriteLine("3. Exit");
+            Console.Write(">");
+            string answer = Console.ReadLine();
+
+            return answer;
+        }
+
+        public static void AdminMenu() { }
+        public static void TrainermMenu() { }
+        public static void CustomerMenu() { }
+        public static User LoginMenu()
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("Login Page");
+                Console.Write("Email   : ");
+                string em = Console.ReadLine();
+                Console.Write("Password: ");
+                string pw = Console.ReadLine();
+
+                User loggedInUser = UM.Login(em, pw);
+
+                if (loggedInUser != null)
+                {
+                    Console.WriteLine($"Welcome {loggedInUser.Name}");
+                    return loggedInUser;
+                }
+            }
+            Console.Clear();
+            return null;
+        }
+        public static void RegisterMenu()
+        {
+            bool res = false;
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("------------------------------");
+                Console.WriteLine("Register Page");
+                Console.Write("Name    : ");
+                string nm = Console.ReadLine();
+                Console.Write("Email   : ");
+                string em = Console.ReadLine();
+                Console.Write("Password: ");
+                string pw = Console.ReadLine();
+
+                res = UM.AddUser(nm, pw, em);
+                if (res)
+                {
+                    break;
+                }
+            }
+            if (!res)
+            {
+                Console.Clear();
+                Console.WriteLine("Cannot create new account.");
+                Console.WriteLine("Go back to main menu.");
+            }
+            else
+            {
+                
+            }
         }
     }
 }

@@ -1,18 +1,19 @@
 ﻿using System;
 
-namespace GymGenie.UserPackage
+namespace GymGenie.user
 {
     [Serializable]
     class Admin : User
     {
-        private bool _isAdmin;
-
         public Admin(string name, string password, string email) : base(name, password, email)
         {
-            _isAdmin = true;
+            Role = 0;
         }
 
-
+        public override string ToString()
+        {
+            return base.ToString() + " |";
+        }
     }
 
 }

@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GymGenie.UserPackage
+namespace GymGenie.user
 {
     [Serializable]
     abstract class User
     {
-        private static int _idSeed = 1;
+        private static int _idSeed = 0;
 
         public string Id { get; }
         public string Name { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+        public int Role { get; set; }
 
         protected User(string name, string password, string email)
         {
@@ -23,14 +24,25 @@ namespace GymGenie.UserPackage
             Email = email;
         }
 
-        public override bool Equals(object obj)
+        public bool Equals(User obj)
         {
-            return base.Equals(obj);
+            if(obj == null)
+            {
+                return false;
+            }
+            if(Email == obj.Email)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override string ToString()
         {
-            return string.Format($"|{Id,-3}|{Name,-20}|{Email, -20}");
+            return string.Format($"|{Id,-3}|{ Role,-4}|{Name,-20}|{Email, -30}|");
         }
     }
 
