@@ -5,8 +5,7 @@ namespace GymGenie.user
     [Serializable]
     class Trainer : User
     {
-
-        public Trainer(string name, string password, string email) : base(name, password, email)
+        public Trainer(int id, string name, string password, string email) : base(id, name, password, email)
         {
             Role = 1;
         }

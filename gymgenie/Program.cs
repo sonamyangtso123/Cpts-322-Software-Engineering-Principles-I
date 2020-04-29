@@ -9,75 +9,67 @@ namespace GymGenie
 
         public static void Main(string[] args)
         {
-            UM.PringUserList();
-
-
             bool isQuit = false;
-            string answer;
             while (!isQuit)
             {
-                answer = MainMenu();
+                string res = MainMenu();
                 User loggedinUser = null;
-                switch (answer)
+                switch (res)
                 {
                     case "1":
                         loggedinUser = LoginMenu();
                         break;
                     case "2":
-                        RegisterMenu();
+                        loggedinUser = RegisterMenu();
+                        break;
+                    case "3":
+                        Console.Clear();
+                        Console.WriteLine("Thanks for using Gym Genie.");
+                        isQuit = true;
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Type wrong.");
+                        Console.WriteLine("Type wrong number.");
                         break;
                 }
 
-                if (loggedinUser != null)
+                if(loggedinUser != null)
                 {
                     switch (loggedinUser.Role)
                     {
                         case 0:
-                            Console.WriteLine("you are admin.");
+                            AdminMenu(loggedinUser);
                             break;
                         case 1:
-                            Console.WriteLine("you are trainer.");
+                            TrainermMenu();
                             break;
                         case 2:
-                            Console.WriteLine("you are customer.");
+                            CustomerMenu();
+                            break;
+                        default:
                             break;
                     }
                 }
-
-
-
-                if (answer == "3")
-                {
-                    Console.Clear();
-                    Console.WriteLine("Thanks for using Gym Genie.");
-                    isQuit = true;
-                }
             }
-
-
         }
 
-
-        public static string MainMenu()
+        // ============================================================================
+        // need to implement admin dashboard
+        public static void AdminMenu(User admin)
         {
+            Console.Clear();
             Console.WriteLine("------------------------------");
-            Console.WriteLine("Gym Management App - Gym Genie");
-            Console.WriteLine("1. login");
-            Console.WriteLine("2. register");
-            Console.WriteLine("3. Exit");
-            Console.Write(">");
-            string answer = Console.ReadLine();
-
-            return answer;
+            Console.WriteLine("Admin Page: " + admin.Name);
+            string stop = Console.ReadLine();
         }
 
-        public static void AdminMenu() { }
+        // need to implement trainer dashboard
         public static void TrainermMenu() { }
+
+        // need to implement customer dashboard
         public static void CustomerMenu() { }
+        // ============================================================================
+
         public static User LoginMenu()
         {
             for (int i = 0; i < 3; i++)
@@ -93,16 +85,19 @@ namespace GymGenie
 
                 if (loggedInUser != null)
                 {
-                    Console.WriteLine($"Welcome {loggedInUser.Name}");
+                    Console.Clear();
+                    Console.WriteLine($"Welcomem {loggedInUser.Name}");
                     return loggedInUser;
                 }
             }
             Console.Clear();
+            Console.WriteLine("Fail to Login.");
             return null;
         }
-        public static void RegisterMenu()
+
+
+        public static User RegisterMenu()
         {
-            bool res = false;
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine("------------------------------");
@@ -114,22 +109,31 @@ namespace GymGenie
                 Console.Write("Password: ");
                 string pw = Console.ReadLine();
 
-                res = UM.AddUser(nm, pw, em);
+                bool res = UM.AddUser(nm, pw, em);
                 if (res)
                 {
-                    break;
+                    Console.WriteLine("Welcome, ", nm);
+                    return UM.Login(em, pw);
                 }
             }
-            if (!res)
-            {
-                Console.Clear();
-                Console.WriteLine("Cannot create new account.");
-                Console.WriteLine("Go back to main menu.");
-            }
-            else
-            {
-                
-            }
+            Console.Clear();
+            Console.WriteLine("Cannot create new account.");
+            Console.WriteLine("Go back to main menu.");
+            return null;
+        }
+
+        public static string MainMenu()
+        {
+            Console.Clear();
+            UM.PrintUserList();
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Gym Management App - Gym Genie");
+            Console.WriteLine("1. login");
+            Console.WriteLine("2. register");
+            Console.WriteLine("3. Exit");
+            Console.Write(">");
+            string res = Console.ReadLine();
+            return res;
         }
     }
 }

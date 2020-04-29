@@ -8,12 +8,13 @@ namespace GymGenie.user
     class Customer : User
     {
         private bool _isMember;
-        public Customer(string name, string password, string email) : base(name, password, email)
+
+        public Customer(int id, string name, string password, string email) : base(id, name, password, email)
         {
             Role = 2;
             _isMember = false;
         }
-
+        
         public override string ToString()
         {
             string res = base.ToString();

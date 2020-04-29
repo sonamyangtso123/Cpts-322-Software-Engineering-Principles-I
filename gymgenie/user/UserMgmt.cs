@@ -9,6 +9,7 @@ namespace GymGenie.user
 {
     class UserMgmt
     {
+        private int _id;
         private string _userList = "userList.bin";
         private IFormatter _bf;
         private Stream _s;
@@ -22,26 +23,37 @@ namespace GymGenie.user
             {
                 _s = new FileStream(_userList, FileMode.Open, FileAccess.Read, FileShare.Read);
                 Users = (List<User>)_bf.Deserialize(_s);
+                _id = (Users[Users.Count-1].Id)+1;
                 _s.Close();
             }
             // if not, it creates new List and add sample accounts
             else
             {
                 Users = new List<User>();
-                Users.Add(new Admin("Admin K", "0000", "admin@gmail.com"));
-                Users.Add(new Trainer("Trainer S", "0000", "trainer@gmail.com"));
-                Users.Add(new Customer("Customer A", "0000", "customer@gmail.com"));
+                Users.Add(new Admin(0, "Admin K", "0000", "admin@gmail.com"));
+                Users.Add(new Trainer(1, "Trainer S", "0000", "trainer@gmail.com"));
+                Users.Add(new Customer(2, "Customer A", "0000", "customer@gmail.com"));
+                _id = 3;
             }
         }
 
         public int Size()
         {
+            // retrun number of account
             return Users.Count;
         }
 
         public bool AddUser(string name, string password, string email)
-        {
-            User newUser = new Customer(name, password, email);
+        {   
+            // check empty entires
+            if(name.Length == 0 || password.Length == 0 || email.Length == 0)
+            {
+                Console.WriteLine("Empty is not allowed");
+                return false;
+            }
+
+            // create user object
+            User newUser = new Customer(_id, name, password, email);
 
             // Check the user and if it exists, return false
             foreach (User user in Users)
@@ -53,8 +65,9 @@ namespace GymGenie.user
                 }
             }
 
-            // Save the user list to file and return true
+            // then, add user into list and save the user list file
             Users.Add(newUser);
+            _id++;
             _s = new FileStream("userList.bin", FileMode.Create, FileAccess.Write, FileShare.None);
             _bf.Serialize(_s, Users);
             _s.Close();
@@ -78,7 +91,7 @@ namespace GymGenie.user
             return null;
         }
 
-        public void PringUserList()
+        public void PrintUserList()
         {
             Console.WriteLine($"|{"Id",-3}|{"Role",-4}|{"        Name",-20}|{"             Email",-30}|M|");
             Console.WriteLine("===============================================================");
