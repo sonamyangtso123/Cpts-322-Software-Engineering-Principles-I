@@ -29,6 +29,10 @@ namespace User
             {
                 return false;
             }
+            if (Id == obj.Id)
+            {
+                return true;
+            }
             if (Email == obj.Email)
             {
                 return true;

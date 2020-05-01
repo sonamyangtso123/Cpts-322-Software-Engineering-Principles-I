@@ -28,6 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.loginGroup = new System.Windows.Forms.GroupBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
@@ -37,6 +46,15 @@
             this.registerBtn = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
             this.AdminGroup = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.userChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.refreshBtn = new System.Windows.Forms.Button();
+            this.userGridView = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMember = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.logoutbtn = new System.Windows.Forms.Button();
             this.userInfoLabel = new System.Windows.Forms.Label();
             this.registerGroup = new System.Windows.Forms.GroupBox();
@@ -50,17 +68,20 @@
             this.regEmailBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.userGridView = new System.Windows.Forms.DataGridView();
-            this.userListBtn = new System.Windows.Forms.Button();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMember = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noaLabel = new System.Windows.Forms.Label();
+            this.notLabel = new System.Windows.Forms.Label();
+            this.nocLabel = new System.Windows.Forms.Label();
+            this.nomLabel = new System.Windows.Forms.Label();
+            this.trainerChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.profitChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.loginGroup.SuspendLayout();
             this.AdminGroup.SuspendLayout();
-            this.registerGroup.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
+            this.registerGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trainerChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profitChart)).BeginInit();
             this.SuspendLayout();
             // 
             // loginGroup
@@ -146,7 +167,8 @@
             // AdminGroup
             // 
             this.AdminGroup.BackColor = System.Drawing.SystemColors.Control;
-            this.AdminGroup.Controls.Add(this.userListBtn);
+            this.AdminGroup.Controls.Add(this.groupBox1);
+            this.AdminGroup.Controls.Add(this.refreshBtn);
             this.AdminGroup.Controls.Add(this.userGridView);
             this.AdminGroup.Location = new System.Drawing.Point(12, 33);
             this.AdminGroup.Name = "AdminGroup";
@@ -155,6 +177,106 @@
             this.AdminGroup.TabStop = false;
             this.AdminGroup.Text = "Admin Dashboard";
             this.AdminGroup.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.profitChart);
+            this.groupBox1.Controls.Add(this.trainerChart);
+            this.groupBox1.Controls.Add(this.nomLabel);
+            this.groupBox1.Controls.Add(this.nocLabel);
+            this.groupBox1.Controls.Add(this.notLabel);
+            this.groupBox1.Controls.Add(this.noaLabel);
+            this.groupBox1.Controls.Add(this.userChart);
+            this.groupBox1.Location = new System.Drawing.Point(599, 34);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(512, 581);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Statistic";
+            // 
+            // userChart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.userChart.ChartAreas.Add(chartArea3);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Name = "Legend1";
+            this.userChart.Legends.Add(legend1);
+            this.userChart.Location = new System.Drawing.Point(129, 20);
+            this.userChart.Name = "userChart";
+            this.userChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Customer";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Member";
+            this.userChart.Series.Add(series3);
+            this.userChart.Series.Add(series4);
+            this.userChart.Size = new System.Drawing.Size(377, 211);
+            this.userChart.TabIndex = 3;
+            this.userChart.Text = "Chart";
+            title1.Name = "dfasadf";
+            this.userChart.Titles.Add(title1);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Location = new System.Drawing.Point(17, 34);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(91, 27);
+            this.refreshBtn.TabIndex = 1;
+            this.refreshBtn.Text = "refresh";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // userGridView
+            // 
+            this.userGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colId,
+            this.colRole,
+            this.colName,
+            this.colEmail,
+            this.colMember});
+            this.userGridView.Location = new System.Drawing.Point(17, 77);
+            this.userGridView.Name = "userGridView";
+            this.userGridView.Size = new System.Drawing.Size(540, 538);
+            this.userGridView.TabIndex = 0;
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Width = 30;
+            // 
+            // colRole
+            // 
+            this.colRole.HeaderText = "Role";
+            this.colRole.Name = "colRole";
+            this.colRole.ReadOnly = true;
+            this.colRole.Width = 70;
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Name";
+            this.colName.Name = "colName";
+            this.colName.ReadOnly = true;
+            this.colName.Width = 150;
+            // 
+            // colEmail
+            // 
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Width = 200;
+            // 
+            // colMember
+            // 
+            this.colMember.HeaderText = "M";
+            this.colMember.Name = "colMember";
+            this.colMember.ReadOnly = true;
+            this.colMember.Width = 30;
             // 
             // logoutbtn
             // 
@@ -283,64 +405,72 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Email";
             // 
-            // userGridView
+            // noaLabel
             // 
-            this.userGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colId,
-            this.colRole,
-            this.colName,
-            this.colEmail,
-            this.colMember});
-            this.userGridView.Location = new System.Drawing.Point(123, 59);
-            this.userGridView.Name = "userGridView";
-            this.userGridView.Size = new System.Drawing.Size(540, 499);
-            this.userGridView.TabIndex = 0;
+            this.noaLabel.AutoSize = true;
+            this.noaLabel.Location = new System.Drawing.Point(30, 50);
+            this.noaLabel.Name = "noaLabel";
+            this.noaLabel.Size = new System.Drawing.Size(42, 13);
+            this.noaLabel.TabIndex = 4;
+            this.noaLabel.Text = "Admin: ";
             // 
-            // userListBtn
+            // notLabel
             // 
-            this.userListBtn.Location = new System.Drawing.Point(17, 59);
-            this.userListBtn.Name = "userListBtn";
-            this.userListBtn.Size = new System.Drawing.Size(91, 27);
-            this.userListBtn.TabIndex = 1;
-            this.userListBtn.Text = "User List";
-            this.userListBtn.UseVisualStyleBackColor = true;
-            this.userListBtn.Click += new System.EventHandler(this.userListBtn_Click);
+            this.notLabel.AutoSize = true;
+            this.notLabel.Location = new System.Drawing.Point(30, 80);
+            this.notLabel.Name = "notLabel";
+            this.notLabel.Size = new System.Drawing.Size(43, 13);
+            this.notLabel.TabIndex = 5;
+            this.notLabel.Text = "Trainer:";
             // 
-            // colId
+            // nocLabel
             // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Width = 30;
+            this.nocLabel.AutoSize = true;
+            this.nocLabel.Location = new System.Drawing.Point(30, 110);
+            this.nocLabel.Name = "nocLabel";
+            this.nocLabel.Size = new System.Drawing.Size(54, 13);
+            this.nocLabel.TabIndex = 6;
+            this.nocLabel.Text = "Customer:";
             // 
-            // colRole
+            // nomLabel
             // 
-            this.colRole.HeaderText = "Role";
-            this.colRole.Name = "colRole";
-            this.colRole.ReadOnly = true;
-            this.colRole.Width = 70;
+            this.nomLabel.AutoSize = true;
+            this.nomLabel.Location = new System.Drawing.Point(30, 140);
+            this.nomLabel.Name = "nomLabel";
+            this.nomLabel.Size = new System.Drawing.Size(51, 13);
+            this.nomLabel.TabIndex = 7;
+            this.nomLabel.Text = "Member: ";
             // 
-            // colName
+            // trainerChart
             // 
-            this.colName.HeaderText = "Name";
-            this.colName.Name = "colName";
-            this.colName.ReadOnly = true;
-            this.colName.Width = 150;
+            chartArea2.Name = "ChartArea1";
+            this.trainerChart.ChartAreas.Add(chartArea2);
+            this.trainerChart.Location = new System.Drawing.Point(22, 232);
+            this.trainerChart.Name = "trainerChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Name = "Trainer";
+            this.trainerChart.Series.Add(series2);
+            this.trainerChart.Size = new System.Drawing.Size(468, 138);
+            this.trainerChart.TabIndex = 5;
+            this.trainerChart.Text = "chart1";
             // 
-            // colEmail
+            // profitChart
             // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            this.colEmail.Width = 200;
-            // 
-            // colMember
-            // 
-            this.colMember.HeaderText = "M";
-            this.colMember.Name = "colMember";
-            this.colMember.ReadOnly = true;
-            this.colMember.Width = 30;
+            chartArea1.Name = "ChartArea1";
+            this.profitChart.ChartAreas.Add(chartArea1);
+            this.profitChart.Location = new System.Drawing.Point(6, 394);
+            this.profitChart.Name = "profitChart";
+            this.profitChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Name = "profit";
+            this.profitChart.Series.Add(series1);
+            this.profitChart.Size = new System.Drawing.Size(484, 162);
+            this.profitChart.TabIndex = 3;
+            this.profitChart.Text = "chart1";
             // 
             // MainForm
             // 
@@ -359,9 +489,14 @@
             this.loginGroup.ResumeLayout(false);
             this.loginGroup.PerformLayout();
             this.AdminGroup.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userGridView)).EndInit();
             this.registerGroup.ResumeLayout(false);
             this.registerGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.userGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trainerChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.profitChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,12 +527,20 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label regErrorLabel;
         private System.Windows.Forms.DataGridView userGridView;
-        private System.Windows.Forms.Button userListBtn;
+        private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn colName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMember;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart userChart;
+        private System.Windows.Forms.Label nomLabel;
+        private System.Windows.Forms.Label nocLabel;
+        private System.Windows.Forms.Label notLabel;
+        private System.Windows.Forms.Label noaLabel;
+        private System.Windows.Forms.DataVisualization.Charting.Chart trainerChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart profitChart;
     }
 }
 

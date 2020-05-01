@@ -68,7 +68,7 @@ namespace User
             // then, add user into list and save the user list file
             users.Add(newUser);
             _id++;
-            _s = new FileStream("userList.bin", FileMode.Create, FileAccess.Write, FileShare.None);
+            _s = new FileStream(_userList, FileMode.Create, FileAccess.Write, FileShare.None);
             _bf.Serialize(_s, users);
             _s.Close();
 
@@ -90,6 +90,52 @@ namespace User
             Console.WriteLine("Email or Password are not invalid.");
             return null;
         }
+
+        public _User findById(int id)
+        {
+            foreach(_User user in users)
+            {
+                if (user.Id == id)
+                {
+                    return user;
+                }
+            }
+            Console.WriteLine("Cannot find user");
+            return null;
+        }
+
+        public int[] getStatistics()
+        {
+            int numOfAdmin = 0;
+            int numOfTrainer = 0;
+            int numOfCustomer = 0;
+            int numOfMember = 0;
+
+            foreach(_User user in users)
+            {
+                switch (user.Role)
+                {
+                    case 0:
+                        numOfAdmin++;
+                        break;
+                    case 1:
+                        numOfTrainer++;
+                        break;
+                    case 2:
+                        numOfCustomer++;
+                        if (((Customer)user).IsMember)
+                        {
+                            numOfMember++;
+                        }
+                        break;
+                }
+            }
+
+            int[] resStatistic = { numOfAdmin, numOfTrainer, numOfCustomer, numOfMember };
+
+            return resStatistic;
+        }
+
 
         public void PrintUserList()
         {
@@ -118,7 +164,14 @@ namespace User
                         break;
                     case 2:
                         sRole = "Customer";
-                        memberState = ((Customer)user).getMember();
+                        if (((Customer)user).IsMember)
+                        {
+                            memberState = "o";
+                        }
+                        else
+                        {
+                            memberState = "x";
+                        }
                         break;
                 }
                 string[] row = { "" + user.Id, sRole, user.Name, user.Email, memberState };
