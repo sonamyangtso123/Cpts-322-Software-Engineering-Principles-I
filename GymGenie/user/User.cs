@@ -15,6 +15,10 @@ namespace GymGenie.user
         // 0: admin, 1:trainer, 2:customer;
         public int Role { get; set; }
 
+        protected User() 
+        { 
+        
+        }
         protected User(int id, string name, string password, string email)
         {
             Id = id;
@@ -42,6 +46,14 @@ namespace GymGenie.user
         public override string ToString()
         {
             return string.Format($"|{Id,-3}|{ Role,-4}|{Name,-20}|{Email, -30}|");
+        }
+
+        /// <summary>
+        /// This will call the admin class to print out the list of users of this program.
+        /// </summary>
+        public void PrintViewList() {
+            Admin myAdmin = new Admin();
+            myAdmin.printList();
         }
     }
 
