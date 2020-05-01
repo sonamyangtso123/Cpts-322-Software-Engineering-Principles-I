@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GymGenie.report
+namespace Report
 {
-    class ReportMgmt
+    class BFR
     {
     }
 }

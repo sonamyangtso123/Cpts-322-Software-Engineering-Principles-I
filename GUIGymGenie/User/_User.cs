@@ -2,34 +2,34 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GymGenie.user
+namespace User
 {
     [Serializable]
-    abstract class User
+    public abstract class _User
     {
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Password { get; set; }
         public string Email { get; set; }
+        public string Password { get; set; }
         // 0: admin, 1:trainer, 2:customer;
         public int Role { get; set; }
 
-        protected User(int id, string name, string password, string email)
+        protected _User(int id, string name, string email, string password)
         {
             Id = id;
             Name = name;
-            Password = password;
             Email = email;
+            Password = password;
         }
 
-        public bool Equals(User obj)
+        public bool Equals(_User obj)
         {
-            if(obj == null)
+            if (obj == null)
             {
                 return false;
             }
-            if(Email == obj.Email)
+            if (Email == obj.Email)
             {
                 return true;
             }
@@ -41,8 +41,7 @@ namespace GymGenie.user
 
         public override string ToString()
         {
-            return string.Format($"|{Id,-3}|{ Role,-4}|{Name,-20}|{Email, -30}|");
+            return string.Format($"|{Id,-3}|{ Role,-4}|{Name,-20}|{Email,-30}|");
         }
     }
-
 }

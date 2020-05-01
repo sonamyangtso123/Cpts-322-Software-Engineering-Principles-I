@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GymGenie.training
+namespace Training
 {
-    class TrainSession
+    class TS
     {
     }
 }
