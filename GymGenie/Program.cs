@@ -60,6 +60,7 @@ namespace GymGenie
             Console.Clear();
             Console.WriteLine("------------------------------");
             Console.WriteLine("Admin Page: " + admin.Name);
+            Console.WriteLine("\n");
             admin.PrintViewList();
             string stop = Console.ReadLine();
         }
@@ -70,6 +71,7 @@ namespace GymGenie
             Console.Clear();
             Console.WriteLine("------------------------------");
             Console.WriteLine("Trainer Page: " + trainer.Name);
+            Console.WriteLine("\n");
             trainer.inforTrainer();
             string stop = Console.ReadLine();
         }

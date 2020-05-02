@@ -12,6 +12,10 @@ namespace GymGenie.user
         {
             Role = 1;
         }
+
+        /// <summary>
+        /// Let the trainer chose any option
+        /// </summary>
         public void ShowOptions()
         {
             string userInput;
@@ -24,9 +28,8 @@ namespace GymGenie.user
             {
                 case 1: CreateBMIReport();
                     break;
-                case 2: //Call a function for adding training session
+                case 2: ShowTrainingSession();
                     break;
-
             }
         }
 
@@ -34,6 +37,10 @@ namespace GymGenie.user
         {
             return base.ToString() + " |";
         }
+
+        /// <summary>
+        /// Create the BMI report.
+        /// </summary>
         public void CreateBMIReport() 
         {
             //Variable to calculate BMI report
@@ -50,9 +57,33 @@ namespace GymGenie.user
                              "You might need to do some extra training sessions.\n");
 
         }
-        public void ShowTrainingSession() 
-        { 
-        
+
+        /// <summary>
+        /// Show training sessions
+        /// </summary>
+        public void ShowTrainingSession()
+        {
+            Console.WriteLine("Day 1:Chest, Back, Shoulders, Legs, Biceps, Triceps\n" +
+                              "Chest – Barbell Bench Press – 4 sets of 8 reps\n" +
+                              "Back – Lat - pulldowns – 4 sets of 10 reps\n" +
+                              "Shoulders – Seated Dumbbell Press – 4 sets of 10 reps\n" +
+                              "Legs – Leg Extensions – 4 sets of 10 reps\n" +
+                              "Biceps – Barbell Bbicep Curls – 3 sets of 10 reps\n" +
+                              "Triceps – Triceps Rope Pushdowns – 3 sets of 15 reps\n\n");
+            Console.WriteLine("Day 2: Legs, Triceps, Biceps, Chest, Back, Shoulder \n" +
+                              "Legs – Leg Press Machine – 4 sets of 8 reps\n" +
+                              "Triceps – Overhead Bar Extensions – 3 sets of 20 reps\n" +
+                              "Biceps – EZ Bar Curls – 4 sets of 10 reps\n" +
+                              "Chest – Machine Chest Press – 4 sets of 10 reps\n" +
+                              "Back – T - Bar Row – 4 sets of 10 reps\n" +
+                              "Shoulders – Lateral Raises – 3 sets of 20 reps\n\n");
+            Console.WriteLine("Day 3: Shoulders, Back, Chest, Legs, Triceps, Biceps\n" +
+                              "Shoulders – EZ Bar Upright Rows – 3 sets of 15 reps\n" +
+                              "Back – Close - Grip Pulldowns – 4 sets of 12 reps\n" +
+                              "Chest – Cable Fly – 4 sets of 10 reps\n" +
+                              "Legs – Lunges – 3 sets of 10 reps per leg\n" +
+                              "Triceps – Skullcrushers – 3 sets of 15 reps\n" +
+                              "Biceps – Hammer Curls – 3 sets of 12 reps\n");
         }
     }
 

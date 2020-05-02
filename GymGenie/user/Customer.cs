@@ -27,5 +27,7 @@ namespace GymGenie.user
             }
             return res;
         }
+
+        
     }
 }
