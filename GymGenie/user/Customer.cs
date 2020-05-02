@@ -64,21 +64,26 @@ namespace GymGenie.user
         {
             Trainer trainer = new Trainer();
             trainer.ShowTrainingSession();
-            Console.WriteLine("Is this the correct session you want?\n");
-            Console.WriteLine("1.Confirm\n" +
-                              "2.Cancel\n");
-            string userInput = Console.ReadLine();
-            int res = Convert.ToInt32(userInput);
-            switch (res)
+            int res = 0;
+            do
             {
-                case 1:
-                    Console.WriteLine("Saved.\n");
-                    System.Environment.Exit(0);
-                    break;
-                case 2:
-                    System.Environment.Exit(0);
-                    break;
-            }
+                Console.WriteLine("Is this the correct session you want?\n");
+                Console.WriteLine("1.Confirm\n" +
+                                  "2.Cancel\n");
+                string userInput = Console.ReadLine();
+                res = Convert.ToInt32(userInput);
+                switch (res)
+                {
+                    case 1:
+                        Console.WriteLine("Saved.\n");
+                        ShowOptionsForCustomer();
+                        break;
+                    case 2:
+                        Console.WriteLine("Canceled\n");
+                        ShowOptionsForCustomer();
+                        break;
+                }
+            } while (res != 2);
         }
     }
 }
