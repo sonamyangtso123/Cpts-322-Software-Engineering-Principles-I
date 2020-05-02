@@ -93,5 +93,4 @@ namespace GymGenie.user
                               "Biceps – Hammer Curls – 3 sets of 12 reps\n");
         }
     }
-
 }

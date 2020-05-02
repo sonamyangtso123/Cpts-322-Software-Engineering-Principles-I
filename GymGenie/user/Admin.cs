@@ -19,6 +19,9 @@ namespace GymGenie.user
             return base.ToString() + " |";
         }
 
+        /// <summary>
+        /// This function will show options for the admin.
+        /// </summary>
         public void ShowOptionsForAdmin()
         {
             string userInput;

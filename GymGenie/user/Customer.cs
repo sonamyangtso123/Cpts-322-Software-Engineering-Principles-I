@@ -32,6 +32,9 @@ namespace GymGenie.user
             return res;
         }
 
+        /// <summary>
+        /// This function show options for customer.
+        /// </summary>
         public void ShowOptionsForCustomer()
         {
             string userInput;
@@ -58,12 +61,18 @@ namespace GymGenie.user
             }while (res != 3) ;
         }
 
+        /// <summary>
+        /// Helps the customer to open the BMI report.
+        /// </summary>
         public void ViewReport() 
         {
             Trainer trainer = new Trainer();
             trainer.CreateBMIReport();
         }
 
+        /// <summary>
+        /// Helps the customer to add training.
+        /// </summary>
         public void CustomerAddTraining()
         {
             Trainer trainer = new Trainer();
