@@ -36,20 +36,22 @@ namespace GymGenie.user
         {
             string userInput;
             int res;
-
-            Console.WriteLine("1.View BMI Report\n");
-            Console.WriteLine("2.Add Training Session\n");
-            userInput = Console.ReadLine();
-            res = Convert.ToInt32(userInput);
-            switch (res)
+            do
             {
-                case 1:
-                    ViewReport();
-                    break;
-                case 2:
-                    CustomerAddTraining();
-                    break;
-            }
+                Console.WriteLine("1.View BMI Report\n");
+                Console.WriteLine("2.Add Training Session\n");
+                userInput = Console.ReadLine();
+                res = Convert.ToInt32(userInput);
+                switch (res)
+                {
+                    case 1:
+                        ViewReport();
+                        break;
+                    case 2:
+                        CustomerAddTraining();
+                        break;
+                }
+            }while (res != 2) ;
         }
 
         public void ViewReport() 
