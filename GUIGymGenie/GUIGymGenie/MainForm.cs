@@ -181,16 +181,46 @@ namespace GUIGymGenie
             userChart.Series["Member"].Points.AddXY(12, 0);
 
             trainerChart.Series["Trainer"].Points.Clear();
-            trainerChart.Series["Trainer"].Points.AddXY("John", 10);
-            trainerChart.Series["Trainer"].Points.AddXY("Andrew", 20);
+            trainerChart.Series["Trainer"].Points.AddXY("Jane", 10);
+            trainerChart.Series["Trainer"].Points.AddXY("Andrew", 17);
             trainerChart.Series["Trainer"].Points.AddXY("Marco", 14);
+            trainerChart.Series["Trainer"].Points.AddXY("Sindy", 16);
 
             profitChart.Series["profit"].Points.Clear();
-            profitChart.Series["profit"].Points.AddXY(1, "2000");
-            profitChart.Series["profit"].Points.AddXY(2, "2500");
-            profitChart.Series["profit"].Points.AddXY(3, "2700");
-            profitChart.Series["profit"].Points.AddXY(4, "3000");
-            profitChart.Series["profit"].Points.AddXY(5, "3100");
+            profitChart.Series["profit"].Points.AddXY(1, ""+(80*7));
+            profitChart.Series["profit"].Points.AddXY(2, ""+(80*23));
+            profitChart.Series["profit"].Points.AddXY(3, ""+(80*25));
+            profitChart.Series["profit"].Points.AddXY(4, ""+(80*30));
+            profitChart.Series["profit"].Points.AddXY(5, ""+(80*statistic[3]));
+        }
+
+        private void cheatLabel_Click(object sender, EventArgs e)
+        {
+            string[] fName = { "Emma", "Liam", "Olivia", "Noah", "Ava", "William", "Isabella", "James", "Sophia", "Oliver", "Charlotte", "Benjamin", "Mia", "Elijah", "Amelia", "Lucas", "Harper", "Mason", "Evelyn", "Logan", "Abigail", "Alexander", "Emily", "Ethan", "Elizabeth", "Jacob", "Mila", "Michael", "Ella", "Daniel", "Avery", "Henry", "Sofia", "Jackson", "Camila", "Sebastian", "Aria", "Aiden", "Scarlett", "Matthew", "Victoria", "Samuel", "Madison", "David", "Luna", "Joseph", "Grace", "Carter", "Chloe", "Owen", "Penelope", "Wyatt", "Layla", "John", "Riley", "Jack", "Zoey", "Luke", "Nora", "Jayden", "Lily", "Dylan", "Eleanor", "Grayson", "Hannah", "Levi", "Lillian", "Isaac", "Addison", "Gabriel", "Aubrey", "Julian", "Ellie", "Mateo", "Stella", "Anthony", "Natalie", "Jaxon", "Zoe", "Lincoln" };
+            string[] lName = { "Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker", "Hall", "Allen", "Young", "Hernandez", "King", "Wright", "Lopez", "Hill", "Scott", "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter", "Mitchell", "Perez", "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Sanchez", "Morris", "Rogers", "Reed", "Cook", "Morgan", "Bell", "Murphy", "Bailey", "Rivera", "Cooper", "Richardson", "Cox", "Howard", "Ward", "Torres", "Peterson", "Gray", "Ramirez", "James", "Watson", "Brooks", "Kelly", "Sanders", "Price", "Bennett", "Wood", "Barnes", "Ross", "Henderson" };
+            var ran = new Random();
+            int ind = ran.Next(fName.Length);
+            string ranName = fName[ind] + " " + lName[ind];
+            string ranEmail = fName[ind].ToLower() + "." + lName[ind].ToLower() + "@gmail.com";
+            UM.AddUser(ranName, ranEmail, "0000");
+        }
+
+        private void cheatBtn1_Click(object sender, EventArgs e)
+        {
+            string[] fName = { "Emma", "Liam", "Olivia", "Noah", "Ava", "William", "Isabella", "James", "Sophia", "Oliver", "Charlotte", "Benjamin", "Mia", "Elijah", "Amelia", "Lucas", "Harper", "Mason", "Evelyn", "Logan", "Abigail", "Alexander", "Emily", "Ethan", "Elizabeth", "Jacob", "Mila", "Michael", "Ella", "Daniel", "Avery", "Henry", "Sofia", "Jackson", "Camila", "Sebastian", "Aria", "Aiden", "Scarlett", "Matthew", "Victoria", "Samuel", "Madison", "David", "Luna", "Joseph", "Grace", "Carter", "Chloe", "Owen", "Penelope", "Wyatt", "Layla", "John", "Riley", "Jack", "Zoey", "Luke", "Nora", "Jayden", "Lily", "Dylan", "Eleanor", "Grayson", "Hannah", "Levi", "Lillian", "Isaac", "Addison", "Gabriel", "Aubrey", "Julian", "Ellie", "Mateo", "Stella", "Anthony", "Natalie", "Jaxon", "Zoe", "Lincoln" };
+            string[] lName = { "Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor", "Anderson", "Thomas", "Jackson", "White", "Harris", "Martin", "Thompson", "Garcia", "Martinez", "Robinson", "Clark", "Rodriguez", "Lewis", "Lee", "Walker", "Hall", "Allen", "Young", "Hernandez", "King", "Wright", "Lopez", "Hill", "Scott", "Green", "Adams", "Baker", "Gonzalez", "Nelson", "Carter", "Mitchell", "Perez", "Roberts", "Turner", "Phillips", "Campbell", "Parker", "Evans", "Edwards", "Collins", "Stewart", "Sanchez", "Morris", "Rogers", "Reed", "Cook", "Morgan", "Bell", "Murphy", "Bailey", "Rivera", "Cooper", "Richardson", "Cox", "Howard", "Ward", "Torres", "Peterson", "Gray", "Ramirez", "James", "Watson", "Brooks", "Kelly", "Sanders", "Price", "Bennett", "Wood", "Barnes", "Ross", "Henderson" };
+            var ran = new Random();
+            int ind = ran.Next(fName.Length);
+            string ranName = fName[ind] + " " + lName[ind];
+            string ranEmail = fName[ind].ToLower() + "." + lName[ind].ToLower() + "@gmail.com";
+            UM.AddUser(ranName, ranEmail, "0000");
+        }
+
+        private void cheatBtn2_Click(object sender, EventArgs e)
+        {
+            var ran = new Random();
+            int id = ran.Next(UM.Size());
+            UM.SetMember(id);
         }
     }
 }

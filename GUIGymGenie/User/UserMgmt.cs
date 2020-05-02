@@ -31,9 +31,12 @@ namespace User
             {
                 users = new List<_User>();
                 users.Add(new Admin(0, "Admin K", "admin@gmail.com", "0000"));
-                users.Add(new Trainer(1, "Trainer S", "trainer@gmail.com", "0000"));
-                users.Add(new Customer(2, "Customer A", "customer@gmail.com", "0000"));
-                _id = 3;
+                users.Add(new Trainer(1, "Jane", "jane@gmail.com", "0000"));
+                users.Add(new Trainer(2, "Andrew", "andrew@gmail.com", "0000"));
+                users.Add(new Trainer(3, "Marco", "marco@gmail.com", "0000"));
+                users.Add(new Trainer(4, "Sindy", "sindy@gmail.com", "0000"));
+  
+                _id = 5;
             }
         }
 
@@ -68,11 +71,16 @@ namespace User
             // then, add user into list and save the user list file
             users.Add(newUser);
             _id++;
+            Save();
+
+            return true;
+        }
+
+        public void Save()
+        {
             _s = new FileStream(_userList, FileMode.Create, FileAccess.Write, FileShare.None);
             _bf.Serialize(_s, users);
             _s.Close();
-
-            return true;
         }
 
         public _User Login (string email, string pass)
@@ -102,6 +110,19 @@ namespace User
             }
             Console.WriteLine("Cannot find user");
             return null;
+        }
+
+        public void SetMember(int id)
+        {
+            foreach(_User user in users)
+            {
+                if(user.Id == id && user.Role == 2)
+                {
+                    ((Customer)user).IsMember = true;
+                    Save();
+
+                }
+            }
         }
 
         public int[] getStatistics()
