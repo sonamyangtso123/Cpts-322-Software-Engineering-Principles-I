@@ -55,6 +55,12 @@ namespace GymGenie.user
             Admin myAdmin = new Admin();
             myAdmin.printList();
         }
+
+        public void inforTrainer() 
+        {
+            Trainer trainer = new Trainer();
+            trainer.ShowOptions();
+        }
     }
 
 }

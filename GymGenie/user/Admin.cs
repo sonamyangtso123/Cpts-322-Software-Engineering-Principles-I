@@ -31,10 +31,14 @@ namespace GymGenie.user
             Console.WriteLine ("2.No\n");
             userInput = Console.ReadLine();
             res = Convert.ToInt32(userInput);
-            if (res == 1) 
+            if (res == 1)
             {
                 UserMgmt myUser = new UserMgmt();
                 myUser.PrintUserList();
+            }
+            else 
+            {
+                System.Environment.Exit(0);
             }
         }
 
