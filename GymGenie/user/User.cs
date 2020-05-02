@@ -56,10 +56,22 @@ namespace GymGenie.user
             myAdmin.printList();
         }
 
-        public void inforTrainer() 
+        /// <summary>
+        /// This function calls the option function in the trainer class.
+        /// </summary>
+        public void InforTrainer() 
         {
             Trainer trainer = new Trainer();
-            trainer.ShowOptions();
+            trainer.ShowOptionsForTrainer();
+        }
+
+        /// <summary>
+        /// This function calls the option function in the customer class.
+        /// </summary>
+        public void InforCustomer()
+        {
+            Customer customer = new Customer();
+            customer.ShowOptionsForCustomer();
         }
     }
 

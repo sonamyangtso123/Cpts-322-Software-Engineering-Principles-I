@@ -44,7 +44,7 @@ namespace GymGenie
                             TrainermMenu(loggedinUser);
                             break;
                         case 2:
-                            CustomerMenu();
+                            CustomerMenu(loggedinUser);
                             break;
                         default:
                             break;
@@ -72,12 +72,19 @@ namespace GymGenie
             Console.WriteLine("------------------------------");
             Console.WriteLine("Trainer Page: " + trainer.Name);
             Console.WriteLine("\n");
-            trainer.inforTrainer();
+            trainer.InforTrainer();
             string stop = Console.ReadLine();
         }
 
         // need to implement customer dashboard
-        public static void CustomerMenu() { }
+        public static void CustomerMenu(User customer) {
+            Console.Clear();
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Customer Page: " + customer.Name);
+            Console.WriteLine("\n");
+            customer.InforCustomer();
+            string stop = Console.ReadLine();
+        }
         // ============================================================================
 
         public static User LoginMenu()

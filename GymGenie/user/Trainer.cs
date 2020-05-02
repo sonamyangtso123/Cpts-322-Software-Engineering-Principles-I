@@ -16,7 +16,7 @@ namespace GymGenie.user
         /// <summary>
         /// Let the trainer chose any option
         /// </summary>
-        public void ShowOptions()
+        public void ShowOptionsForTrainer()
         {
             string userInput;
             int res;
