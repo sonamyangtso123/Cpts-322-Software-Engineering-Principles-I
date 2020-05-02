@@ -99,6 +99,7 @@ namespace GymGenie.user
             {
                 Console.WriteLine(user);
             }
+            Console.WriteLine("\n");
         }
     }
 }

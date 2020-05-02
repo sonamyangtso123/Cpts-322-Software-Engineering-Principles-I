@@ -19,29 +19,37 @@ namespace GymGenie.user
             return base.ToString() + " |";
         }
 
+        public void ShowOptionsForAdmin()
+        {
+            string userInput;
+            int res = 0;
+            do
+            {
+                Console.WriteLine("1.View user List\n");
+                Console.WriteLine("2.Log out\n");
+                userInput = Console.ReadLine();
+                res = Convert.ToInt32(userInput);
+                switch (res)
+                {
+                    case 1:
+                        PrintList();
+                        break;
+                    case 2:
+                        Program.MainMenu();
+                        break;
+
+                }
+            } while (res != 2);
+        }
+
         /// <summary>
         /// This function will let the admin to view the list of users of the program.
         /// </summary>
-        public void printList() 
+        public void PrintList() 
         {
-            string userInput;
-            int res;
-            Console.WriteLine("Do you want to view the list\n");
-            Console.WriteLine("1.Yes\n");
-            Console.WriteLine ("2.No\n");
-            userInput = Console.ReadLine();
-            res = Convert.ToInt32(userInput);
-            if (res == 1)
-            {
-                UserMgmt myUser = new UserMgmt();
-                myUser.PrintUserList();
-            }
-            else 
-            {
-                System.Environment.Exit(0);
-            }
+            UserMgmt myUser = new UserMgmt();
+            myUser.PrintUserList(); 
         }
-
     }
 
 }

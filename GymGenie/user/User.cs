@@ -51,9 +51,9 @@ namespace GymGenie.user
         /// <summary>
         /// This will call the admin class to print out the list of users of this program.
         /// </summary>
-        public void PrintViewList() {
+        public void InforAdmin() {
             Admin myAdmin = new Admin();
-            myAdmin.printList();
+            myAdmin.ShowOptionsForAdmin();
         }
 
         /// <summary>
