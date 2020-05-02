@@ -40,6 +40,7 @@ namespace GymGenie.user
             {
                 Console.WriteLine("1.View BMI Report\n");
                 Console.WriteLine("2.Add Training Session\n");
+                Console.WriteLine("3.Log out\n");
                 userInput = Console.ReadLine();
                 res = Convert.ToInt32(userInput);
                 switch (res)
@@ -50,8 +51,11 @@ namespace GymGenie.user
                     case 2:
                         CustomerAddTraining();
                         break;
+                    case 3:
+                        Program.MainMenu();
+                        break;
                 }
-            }while (res != 2) ;
+            }while (res != 3) ;
         }
 
         public void ViewReport() 
