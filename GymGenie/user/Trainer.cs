@@ -20,17 +20,24 @@ namespace GymGenie.user
         {
             string userInput;
             int res;
-            Console.WriteLine("1.Create BMI Report\n");
-            Console.WriteLine("2.Add Training Session\n");
-            userInput = Console.ReadLine();
-            res = Convert.ToInt32(userInput);
-            switch (res) 
+            do
             {
-                case 1: CreateBMIReport();
-                    break;
-                case 2: ShowTrainingSession();
-                    break;
-            }
+                Console.WriteLine("1.Create BMI Report\n");
+                Console.WriteLine("2.Add Training Session\n");
+                userInput = Console.ReadLine();
+                res = Convert.ToInt32(userInput);
+                switch (res)
+                {
+                    case 1:
+                        CreateBMIReport();
+                        break;
+                    case 2:
+                        ShowTrainingSession();
+                        break;
+
+                }
+
+            } while (res != 2);  
         }
 
         public override string ToString()

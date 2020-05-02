@@ -36,6 +36,7 @@ namespace GymGenie.user
         {
             string userInput;
             int res;
+
             Console.WriteLine("1.View BMI Report\n");
             Console.WriteLine("2.Add Training Session\n");
             userInput = Console.ReadLine();
