@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Training;
 using User;
 
 namespace GUIGymGenie
@@ -15,6 +16,7 @@ namespace GUIGymGenie
     public partial class MainForm : Form
     {
         static UserMgmt UM = new UserMgmt();
+        static TSMgmt TM = new TSMgmt();
         static _User LOGGEDIN;
 
         public MainForm()
@@ -33,6 +35,11 @@ namespace GUIGymGenie
                     AdminGroup.Visible = true;
                     refreshBtn.PerformClick();
 
+                }else if(LOGGEDIN.Role == 1)
+                {
+                    trainerGroup.Visible = true;
+                    trainerGroup.Location = new Point(12, 33);
+                    refreshBtn2.PerformClick();
                 }
                 emailBox.Text = "";
                 passBox.Text = "";
@@ -110,6 +117,7 @@ namespace GUIGymGenie
         {
             userInfoLabel.Text = "";
             AdminGroup.Visible = false;
+            trainerGroup.Visible = false;
             loginGroup.Visible = true;
             logoutbtn.Visible = false;
             LOGGEDIN = null;
@@ -221,6 +229,44 @@ namespace GUIGymGenie
             var ran = new Random();
             int id = ran.Next(UM.Size());
             UM.SetMember(id);
+        }
+
+        private void trainerGroup_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addTSBtn_Click(object sender, EventArgs e)
+        {
+            var date = datePicker.Value;
+            var time = timePicker.Value;
+            string loc = locCombo.Text;
+            int cap = (int) capUD.Value;
+            string dateTime = string.Format("{0} {1}", date.ToString("MM/dd/yyyy"), time.ToString("hh:mm tt"));
+            
+            if(loc.Length != 0 && cap != 0)
+            {
+                AddTSHandler(dateTime, loc, cap);
+            }
+        }
+
+        public void AddTSHandler(string dateTime, string loc, int cap)
+        {
+            TM.AddTS(LOGGEDIN.Id, dateTime, loc, cap);
+            refreshBtn2.PerformClick();
+        }
+
+        private void refreshBtn2_Click(object sender, EventArgs e)
+        {
+            tsGridView.Rows.Clear();
+            List<string[]> list = TM.outputDataGrid(LOGGEDIN.Id);
+            int i = 1;
+            foreach (string[] row in list)
+            {
+                row[0] = "" + i;
+                i++;
+                tsGridView.Rows.Add(row);
+            }
         }
     }
 }

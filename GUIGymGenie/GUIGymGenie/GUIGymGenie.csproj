@@ -84,6 +84,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Training\Training.csproj">
+      <Project>{048BD2C2-664F-43D0-AA62-683E49AF7B6D}</Project>
+      <Name>Training</Name>
+    </ProjectReference>
     <ProjectReference Include="..\User\User.csproj">
       <Project>{FB1F1316-38E6-4BF3-9536-EC8AE58D403A}</Project>
       <Name>User</Name>

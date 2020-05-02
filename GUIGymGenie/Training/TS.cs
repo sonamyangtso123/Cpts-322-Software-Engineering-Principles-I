@@ -10,13 +10,13 @@ namespace Training
     {
         public int Id { get; set; }
         public int TrainerId { get; set; }
-        public int DateTime { get; set; }
-        public int Capacity { get; set; }
+        public string DateTime { get; set; }
         public string Location { get; set; }
+        public int Capacity { get; set; }
         public bool IsFull { get; set; }
         private List<_User> participants;
 
-        public TS(int id, int trainerId, int dateTime, int capacity, string location)
+        public TS(int id, int trainerId, string dateTime, string location, int capacity)
         {
             Id = id;
             TrainerId = trainerId;
@@ -26,20 +26,43 @@ namespace Training
             IsFull = false;
             participants = new List<_User>();
         }
-        
+
         public bool AddParticipant(_User participant)
         {
-            foreach(_User user in participants)
+            if (!IsFull)
             {
-                if (user.Equals(participant))
+                foreach (_User user in participants)
                 {
-                    Console.WriteLine("Already assgined.");
-                    return false;
+                    if (user.Equals(participant))
+                    {
+                        Console.WriteLine("Already assgined.");
+                        return false;
+                    }
                 }
+                participants.Add(participant);
+                if(participants.Count == Capacity)
+                {
+                    IsFull = true;
+                }
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("The training session is full");
+                return false;
             }
 
-            participants.Add(participant);
-            return true;
+        }
+
+        public string[] outputTS()
+        {
+            var participantsList = new StringBuilder();
+            foreach (_User user in participants)
+            {
+                participantsList.Append(user.Name + ", ");
+            }
+            string[] res = { "0" ,DateTime, Location, "" + Capacity, (IsFull ? "o" : "x"), participantsList.ToString()};
+            return res;
         }
     }
 }

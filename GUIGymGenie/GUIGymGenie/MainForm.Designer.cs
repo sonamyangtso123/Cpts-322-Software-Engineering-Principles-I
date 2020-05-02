@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.loginGroup = new System.Windows.Forms.GroupBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
@@ -81,6 +82,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cheatBtn1 = new System.Windows.Forms.Button();
             this.cheatBtn2 = new System.Windows.Forms.Button();
+            this.trainerGroup = new System.Windows.Forms.GroupBox();
+            this.capUD = new System.Windows.Forms.NumericUpDown();
+            this.timePicker = new System.Windows.Forms.DateTimePicker();
+            this.locCombo = new System.Windows.Forms.ComboBox();
+            this.reportGroup = new System.Windows.Forms.GroupBox();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.addTSBtn = new System.Windows.Forms.Button();
+            this.tsGridView = new System.Windows.Forms.DataGridView();
+            this.TcolId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TcolDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TcolLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TcolCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TcolIsFull = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TcolParticipants = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refreshBtn2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.loginGroup.SuspendLayout();
             this.AdminGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -89,6 +107,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.userChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
             this.registerGroup.SuspendLayout();
+            this.trainerGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.capUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // loginGroup
@@ -233,38 +255,38 @@
             // 
             // profitChart
             // 
-            chartArea13.Name = "ChartArea1";
-            this.profitChart.ChartAreas.Add(chartArea13);
+            chartArea4.Name = "ChartArea1";
+            this.profitChart.ChartAreas.Add(chartArea4);
             this.profitChart.Location = new System.Drawing.Point(6, 413);
             this.profitChart.Name = "profitChart";
             this.profitChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series17.BorderWidth = 2;
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series17.Name = "profit";
-            this.profitChart.Series.Add(series17);
+            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Name = "profit";
+            this.profitChart.Series.Add(series5);
             this.profitChart.Size = new System.Drawing.Size(500, 162);
             this.profitChart.TabIndex = 3;
             this.profitChart.Text = "chart1";
-            title13.Name = "Profit Status";
-            this.profitChart.Titles.Add(title13);
+            title4.Name = "Profit Status";
+            this.profitChart.Titles.Add(title4);
             // 
             // trainerChart
             // 
-            chartArea14.Name = "ChartArea1";
-            this.trainerChart.ChartAreas.Add(chartArea14);
+            chartArea5.Name = "ChartArea1";
+            this.trainerChart.ChartAreas.Add(chartArea5);
             this.trainerChart.Location = new System.Drawing.Point(6, 244);
             this.trainerChart.Name = "trainerChart";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series18.Name = "Trainer";
-            this.trainerChart.Series.Add(series18);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series6.Name = "Trainer";
+            this.trainerChart.Series.Add(series6);
             this.trainerChart.Size = new System.Drawing.Size(500, 138);
             this.trainerChart.TabIndex = 5;
             this.trainerChart.Text = "chart1";
-            title14.Name = "Training Session Status";
-            this.trainerChart.Titles.Add(title14);
+            title5.Name = "Training Session Status";
+            this.trainerChart.Titles.Add(title5);
             // 
             // nomLabel
             // 
@@ -304,28 +326,28 @@
             // 
             // userChart
             // 
-            chartArea15.Name = "ChartArea1";
-            this.userChart.ChartAreas.Add(chartArea15);
-            legend5.Alignment = System.Drawing.StringAlignment.Center;
-            legend5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend5.Name = "Legend1";
-            this.userChart.Legends.Add(legend5);
+            chartArea6.Name = "ChartArea1";
+            this.userChart.ChartAreas.Add(chartArea6);
+            legend2.Alignment = System.Drawing.StringAlignment.Center;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            this.userChart.Legends.Add(legend2);
             this.userChart.Location = new System.Drawing.Point(129, 11);
             this.userChart.Name = "userChart";
             this.userChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series19.ChartArea = "ChartArea1";
-            series19.Legend = "Legend1";
-            series19.Name = "Customer";
-            series20.ChartArea = "ChartArea1";
-            series20.Legend = "Legend1";
-            series20.Name = "Member";
-            this.userChart.Series.Add(series19);
-            this.userChart.Series.Add(series20);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Customer";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Member";
+            this.userChart.Series.Add(series7);
+            this.userChart.Series.Add(series8);
             this.userChart.Size = new System.Drawing.Size(377, 211);
             this.userChart.TabIndex = 3;
             this.userChart.Text = "Chart";
-            title15.Name = "Customer and Member Status";
-            this.userChart.Titles.Add(title15);
+            title6.Name = "Customer and Member Status";
+            this.userChart.Titles.Add(title6);
             // 
             // refreshBtn
             // 
@@ -531,11 +553,178 @@
             this.cheatBtn2.UseVisualStyleBackColor = true;
             this.cheatBtn2.Click += new System.EventHandler(this.cheatBtn2_Click);
             // 
+            // trainerGroup
+            // 
+            this.trainerGroup.Controls.Add(this.label10);
+            this.trainerGroup.Controls.Add(this.pictureBox1);
+            this.trainerGroup.Controls.Add(this.refreshBtn2);
+            this.trainerGroup.Controls.Add(this.capUD);
+            this.trainerGroup.Controls.Add(this.timePicker);
+            this.trainerGroup.Controls.Add(this.locCombo);
+            this.trainerGroup.Controls.Add(this.reportGroup);
+            this.trainerGroup.Controls.Add(this.datePicker);
+            this.trainerGroup.Controls.Add(this.addTSBtn);
+            this.trainerGroup.Controls.Add(this.tsGridView);
+            this.trainerGroup.Location = new System.Drawing.Point(18, 27);
+            this.trainerGroup.Name = "trainerGroup";
+            this.trainerGroup.Size = new System.Drawing.Size(1135, 636);
+            this.trainerGroup.TabIndex = 3;
+            this.trainerGroup.TabStop = false;
+            this.trainerGroup.Text = "Trainer Dashboard";
+            this.trainerGroup.Visible = false;
+            this.trainerGroup.Enter += new System.EventHandler(this.trainerGroup_Enter);
+            // 
+            // capUD
+            // 
+            this.capUD.Location = new System.Drawing.Point(369, 253);
+            this.capUD.Name = "capUD";
+            this.capUD.Size = new System.Drawing.Size(53, 20);
+            this.capUD.TabIndex = 4;
+            this.capUD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // timePicker
+            // 
+            this.timePicker.CustomFormat = "hh:mm tt";
+            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timePicker.Location = new System.Drawing.Point(125, 253);
+            this.timePicker.Name = "timePicker";
+            this.timePicker.ShowUpDown = true;
+            this.timePicker.Size = new System.Drawing.Size(90, 20);
+            this.timePicker.TabIndex = 2;
+            // 
+            // locCombo
+            // 
+            this.locCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.locCombo.FormattingEnabled = true;
+            this.locCombo.Items.AddRange(new object[] {
+            "Room 101",
+            "Room 102",
+            "Room 201",
+            "Room 202"});
+            this.locCombo.Location = new System.Drawing.Point(221, 253);
+            this.locCombo.Name = "locCombo";
+            this.locCombo.Size = new System.Drawing.Size(140, 20);
+            this.locCombo.TabIndex = 3;
+            // 
+            // reportGroup
+            // 
+            this.reportGroup.Location = new System.Drawing.Point(563, 247);
+            this.reportGroup.Name = "reportGroup";
+            this.reportGroup.Size = new System.Drawing.Size(548, 362);
+            this.reportGroup.TabIndex = 14;
+            this.reportGroup.TabStop = false;
+            this.reportGroup.Text = "Body Report Form";
+            // 
+            // datePicker
+            // 
+            this.datePicker.CustomFormat = "MM/dd/yyyy";
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(28, 253);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(91, 20);
+            this.datePicker.TabIndex = 1;
+            this.datePicker.Value = new System.DateTime(2020, 5, 25, 0, 0, 0, 0);
+            // 
+            // addTSBtn
+            // 
+            this.addTSBtn.Location = new System.Drawing.Point(429, 253);
+            this.addTSBtn.Name = "addTSBtn";
+            this.addTSBtn.Size = new System.Drawing.Size(60, 20);
+            this.addTSBtn.TabIndex = 5;
+            this.addTSBtn.Text = "Add";
+            this.addTSBtn.UseVisualStyleBackColor = true;
+            this.addTSBtn.Click += new System.EventHandler(this.addTSBtn_Click);
+            // 
+            // tsGridView
+            // 
+            this.tsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TcolId,
+            this.TcolDate,
+            this.TcolLocation,
+            this.TcolCapacity,
+            this.TcolIsFull,
+            this.TcolParticipants});
+            this.tsGridView.Location = new System.Drawing.Point(28, 26);
+            this.tsGridView.Name = "tsGridView";
+            this.tsGridView.Size = new System.Drawing.Size(1083, 208);
+            this.tsGridView.TabIndex = 11;
+            // 
+            // TcolId
+            // 
+            this.TcolId.HeaderText = "ID";
+            this.TcolId.Name = "TcolId";
+            this.TcolId.ReadOnly = true;
+            this.TcolId.Width = 30;
+            // 
+            // TcolDate
+            // 
+            this.TcolDate.HeaderText = "Date/Time";
+            this.TcolDate.Name = "TcolDate";
+            this.TcolDate.ReadOnly = true;
+            this.TcolDate.Width = 150;
+            // 
+            // TcolLocation
+            // 
+            this.TcolLocation.HeaderText = "Location";
+            this.TcolLocation.Name = "TcolLocation";
+            this.TcolLocation.ReadOnly = true;
+            // 
+            // TcolCapacity
+            // 
+            this.TcolCapacity.HeaderText = "Cap";
+            this.TcolCapacity.Name = "TcolCapacity";
+            this.TcolCapacity.ReadOnly = true;
+            this.TcolCapacity.Width = 30;
+            // 
+            // TcolIsFull
+            // 
+            this.TcolIsFull.HeaderText = "Full";
+            this.TcolIsFull.Name = "TcolIsFull";
+            this.TcolIsFull.ReadOnly = true;
+            this.TcolIsFull.Width = 30;
+            // 
+            // TcolParticipants
+            // 
+            this.TcolParticipants.HeaderText = "Participants";
+            this.TcolParticipants.Name = "TcolParticipants";
+            this.TcolParticipants.ReadOnly = true;
+            this.TcolParticipants.Width = 680;
+            // 
+            // refreshBtn2
+            // 
+            this.refreshBtn2.Location = new System.Drawing.Point(495, 253);
+            this.refreshBtn2.Name = "refreshBtn2";
+            this.refreshBtn2.Size = new System.Drawing.Size(62, 20);
+            this.refreshBtn2.TabIndex = 15;
+            this.refreshBtn2.Text = "Refresh";
+            this.refreshBtn2.UseVisualStyleBackColor = true;
+            this.refreshBtn2.Click += new System.EventHandler(this.refreshBtn2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(63, 372);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(438, 171);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(202, 352);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(159, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Daily Training Session Schedule";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1159, 681);
+            this.Controls.Add(this.trainerGroup);
             this.Controls.Add(this.cheatBtn2);
             this.Controls.Add(this.cheatBtn1);
             this.Controls.Add(this.AdminGroup);
@@ -558,6 +747,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).EndInit();
             this.registerGroup.ResumeLayout(false);
             this.registerGroup.PerformLayout();
+            this.trainerGroup.ResumeLayout(false);
+            this.trainerGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.capUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -607,6 +801,23 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button cheatBtn1;
         private System.Windows.Forms.Button cheatBtn2;
+        private System.Windows.Forms.GroupBox trainerGroup;
+        private System.Windows.Forms.DataGridView tsGridView;
+        private System.Windows.Forms.ComboBox locCombo;
+        private System.Windows.Forms.GroupBox reportGroup;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.Button addTSBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TcolId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TcolDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TcolLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TcolCapacity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TcolIsFull;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TcolParticipants;
+        private System.Windows.Forms.DateTimePicker timePicker;
+        private System.Windows.Forms.NumericUpDown capUD;
+        private System.Windows.Forms.Button refreshBtn2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
