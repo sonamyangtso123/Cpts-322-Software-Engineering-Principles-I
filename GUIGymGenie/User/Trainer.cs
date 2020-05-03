@@ -18,6 +18,20 @@ namespace User
         {
             return base.ToString() + " |";
         }
+
+        public void CreateBMIReport()
+        {
+            Console.WriteLine("User's BMI Report:");
+            Console.WriteLine(" Result: BMI Index = 26 You are overweight.");
+        }
+
+        public void AddTrainingSession()
+        {
+            T1 = "Date: 05-08-2022, Location: Weight Room, Workout: Resistance Training";
+            Console.WriteLine(T1);
+            Console.WriteLine("Training Session successfully added!");
+        }
+
     }
 
    
