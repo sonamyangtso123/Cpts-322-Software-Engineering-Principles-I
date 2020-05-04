@@ -83,10 +83,23 @@
             this.cheatBtn1 = new System.Windows.Forms.Button();
             this.cheatBtn2 = new System.Windows.Forms.Button();
             this.trainerGroup = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.refreshBtn2 = new System.Windows.Forms.Button();
             this.capUD = new System.Windows.Forms.NumericUpDown();
             this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.locCombo = new System.Windows.Forms.ComboBox();
             this.reportGroup = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.bfrBtn = new System.Windows.Forms.Button();
+            this.bfrRichBox = new System.Windows.Forms.RichTextBox();
+            this.bfrDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.heightBox = new System.Windows.Forms.TextBox();
+            this.weightBox = new System.Windows.Forms.TextBox();
+            this.nameCombo = new System.Windows.Forms.ComboBox();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.addTSBtn = new System.Windows.Forms.Button();
             this.tsGridView = new System.Windows.Forms.DataGridView();
@@ -96,9 +109,7 @@
             this.TcolCapacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TcolIsFull = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TcolParticipants = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.refreshBtn2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.cheatBtn3 = new System.Windows.Forms.Button();
             this.loginGroup.SuspendLayout();
             this.AdminGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -108,9 +119,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.userGridView)).BeginInit();
             this.registerGroup.SuspendLayout();
             this.trainerGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.capUD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.capUD)).BeginInit();
+            this.reportGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // loginGroup
@@ -574,6 +586,34 @@
             this.trainerGroup.Visible = false;
             this.trainerGroup.Enter += new System.EventHandler(this.trainerGroup_Enter);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(202, 352);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(159, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Daily Training Session Schedule";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(63, 372);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(438, 171);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // refreshBtn2
+            // 
+            this.refreshBtn2.Location = new System.Drawing.Point(495, 253);
+            this.refreshBtn2.Name = "refreshBtn2";
+            this.refreshBtn2.Size = new System.Drawing.Size(62, 20);
+            this.refreshBtn2.TabIndex = 15;
+            this.refreshBtn2.Text = "Refresh";
+            this.refreshBtn2.UseVisualStyleBackColor = true;
+            this.refreshBtn2.Click += new System.EventHandler(this.refreshBtn2_Click);
+            // 
             // capUD
             // 
             this.capUD.Location = new System.Drawing.Point(369, 253);
@@ -608,12 +648,107 @@
             // 
             // reportGroup
             // 
+            this.reportGroup.Controls.Add(this.label14);
+            this.reportGroup.Controls.Add(this.label13);
+            this.reportGroup.Controls.Add(this.label12);
+            this.reportGroup.Controls.Add(this.label11);
+            this.reportGroup.Controls.Add(this.bfrBtn);
+            this.reportGroup.Controls.Add(this.bfrRichBox);
+            this.reportGroup.Controls.Add(this.bfrDatePicker);
+            this.reportGroup.Controls.Add(this.heightBox);
+            this.reportGroup.Controls.Add(this.weightBox);
+            this.reportGroup.Controls.Add(this.nameCombo);
             this.reportGroup.Location = new System.Drawing.Point(563, 247);
             this.reportGroup.Name = "reportGroup";
             this.reportGroup.Size = new System.Drawing.Size(548, 362);
             this.reportGroup.TabIndex = 14;
             this.reportGroup.TabStop = false;
             this.reportGroup.Text = "Body Report Form";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(375, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(30, 13);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Date";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(278, 61);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Height";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(180, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Weight";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(70, 61);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 13);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Name";
+            // 
+            // bfrBtn
+            // 
+            this.bfrBtn.Location = new System.Drawing.Point(444, 83);
+            this.bfrBtn.Name = "bfrBtn";
+            this.bfrBtn.Size = new System.Drawing.Size(75, 23);
+            this.bfrBtn.TabIndex = 5;
+            this.bfrBtn.Text = "Add";
+            this.bfrBtn.UseVisualStyleBackColor = true;
+            this.bfrBtn.Click += new System.EventHandler(this.bfrBtn_Click);
+            // 
+            // bfrRichBox
+            // 
+            this.bfrRichBox.Location = new System.Drawing.Point(30, 116);
+            this.bfrRichBox.Name = "bfrRichBox";
+            this.bfrRichBox.Size = new System.Drawing.Size(489, 179);
+            this.bfrRichBox.TabIndex = 4;
+            this.bfrRichBox.Text = "";
+            // 
+            // bfrDatePicker
+            // 
+            this.bfrDatePicker.CustomFormat = "MM/dd/yyyy";
+            this.bfrDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.bfrDatePicker.Location = new System.Drawing.Point(356, 85);
+            this.bfrDatePicker.Name = "bfrDatePicker";
+            this.bfrDatePicker.Size = new System.Drawing.Size(78, 20);
+            this.bfrDatePicker.TabIndex = 3;
+            // 
+            // heightBox
+            // 
+            this.heightBox.Location = new System.Drawing.Point(254, 85);
+            this.heightBox.Name = "heightBox";
+            this.heightBox.Size = new System.Drawing.Size(96, 20);
+            this.heightBox.TabIndex = 2;
+            // 
+            // weightBox
+            // 
+            this.weightBox.Location = new System.Drawing.Point(157, 85);
+            this.weightBox.Name = "weightBox";
+            this.weightBox.Size = new System.Drawing.Size(91, 20);
+            this.weightBox.TabIndex = 1;
+            // 
+            // nameCombo
+            // 
+            this.nameCombo.FormattingEnabled = true;
+            this.nameCombo.Location = new System.Drawing.Point(30, 85);
+            this.nameCombo.Name = "nameCombo";
+            this.nameCombo.Size = new System.Drawing.Size(121, 21);
+            this.nameCombo.TabIndex = 0;
             // 
             // datePicker
             // 
@@ -691,39 +826,21 @@
             this.TcolParticipants.ReadOnly = true;
             this.TcolParticipants.Width = 680;
             // 
-            // refreshBtn2
+            // cheatBtn3
             // 
-            this.refreshBtn2.Location = new System.Drawing.Point(495, 253);
-            this.refreshBtn2.Name = "refreshBtn2";
-            this.refreshBtn2.Size = new System.Drawing.Size(62, 20);
-            this.refreshBtn2.TabIndex = 15;
-            this.refreshBtn2.Text = "Refresh";
-            this.refreshBtn2.UseVisualStyleBackColor = true;
-            this.refreshBtn2.Click += new System.EventHandler(this.refreshBtn2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(63, 372);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(438, 171);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(202, 352);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(159, 13);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Daily Training Session Schedule";
+            this.cheatBtn3.Location = new System.Drawing.Point(56, 11);
+            this.cheatBtn3.Name = "cheatBtn3";
+            this.cheatBtn3.Size = new System.Drawing.Size(16, 16);
+            this.cheatBtn3.TabIndex = 8;
+            this.cheatBtn3.UseVisualStyleBackColor = true;
+            this.cheatBtn3.Click += new System.EventHandler(this.cheatBtn3_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1159, 681);
+            this.Controls.Add(this.cheatBtn3);
             this.Controls.Add(this.trainerGroup);
             this.Controls.Add(this.cheatBtn2);
             this.Controls.Add(this.cheatBtn1);
@@ -749,9 +866,11 @@
             this.registerGroup.PerformLayout();
             this.trainerGroup.ResumeLayout(false);
             this.trainerGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.capUD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.capUD)).EndInit();
+            this.reportGroup.ResumeLayout(false);
+            this.reportGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,6 +937,17 @@
         private System.Windows.Forms.Button refreshBtn2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button cheatBtn3;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button bfrBtn;
+        private System.Windows.Forms.RichTextBox bfrRichBox;
+        private System.Windows.Forms.DateTimePicker bfrDatePicker;
+        private System.Windows.Forms.TextBox heightBox;
+        private System.Windows.Forms.TextBox weightBox;
+        private System.Windows.Forms.ComboBox nameCombo;
     }
 }
 

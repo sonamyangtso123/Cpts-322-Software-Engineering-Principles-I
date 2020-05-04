@@ -58,6 +58,36 @@ namespace Training
             return true;
         }
 
+        public void AddPartInTS(int trainerId, int tsId, string name)
+        {
+            foreach(TS ts in tss)
+            {
+                if(ts.TrainerId == trainerId)
+                {
+                    if(ts.Id == tsId)
+                    {
+                        ts.AddParticipant(name);
+                        Save();
+                        break;
+                    }
+                }
+            }
+        }
+
+        public int getSizeTS(int trainerId)
+        {
+            int res=0;
+            foreach(TS ts in tss)
+            {
+                if(ts.TrainerId == trainerId)
+                {
+                    res++;
+                }
+            }
+            return res;
+        }
+
+
         public List<string[]> outputDataGrid(int trainId)
         {
             List<string[]> res = new List<string[]>();

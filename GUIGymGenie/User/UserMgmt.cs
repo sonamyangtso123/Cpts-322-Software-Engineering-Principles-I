@@ -125,6 +125,19 @@ namespace User
             }
         }
 
+        public List<_User> GetAllMember()
+        {
+            List<_User> res = new List<_User>();
+            foreach(_User user in users)
+            {
+                if(user.Role == 2 && ((Customer)user).IsMember)
+                {
+                    res.Add(user);
+                }
+            }
+            return res;
+        }
+
         public int[] getStatistics()
         {
             int numOfAdmin = 0;

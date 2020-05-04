@@ -267,6 +267,35 @@ namespace GUIGymGenie
                 i++;
                 tsGridView.Rows.Add(row);
             }
+
+            List<_User> memberList = UM.GetAllMember();
+            foreach (_User user in memberList)
+            {
+                nameCombo.Items.Add(user.Name);
+            }
+        }
+
+        private void cheatBtn3_Click(object sender, EventArgs e)
+        {
+            List<_User> memberList = UM.GetAllMember();
+
+            var ran = new Random();
+            int indexOfUser = ran.Next(memberList.Count);
+            int indexOfTS = ran.Next(1, TM.getSizeTS(LOGGEDIN.Id) + 1);
+
+            TM.AddPartInTS(LOGGEDIN.Id, indexOfTS, memberList[indexOfUser].Name);
+
+        }
+
+        private void bfrBtn_Click(object sender, EventArgs e)
+        {
+            string name = nameCombo.Text;
+            string weight = weightBox.Text;
+            string height = heightBox.Text;
+            string date = bfrDatePicker.Text;
+            string detail = bfrRichBox.Text;
+
+            string[] bfr = { name, weight, height, date, detail };
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Training
         public string Location { get; set; }
         public int Capacity { get; set; }
         public bool IsFull { get; set; }
-        private List<_User> participants;
+        public List<string> Participants { get; }
 
         public TS(int id, int trainerId, string dateTime, string location, int capacity)
         {
@@ -24,23 +24,23 @@ namespace Training
             Capacity = capacity;
             Location = location;
             IsFull = false;
-            participants = new List<_User>();
+            Participants = new List<string>();
         }
 
-        public bool AddParticipant(_User participant)
+        public bool AddParticipant(string name)
         {
             if (!IsFull)
             {
-                foreach (_User user in participants)
+                foreach (string participant in Participants)
                 {
-                    if (user.Equals(participant))
+                    if (participant == name)
                     {
                         Console.WriteLine("Already assgined.");
                         return false;
                     }
                 }
-                participants.Add(participant);
-                if(participants.Count == Capacity)
+                Participants.Add(name);
+                if(Participants.Count == Capacity)
                 {
                     IsFull = true;
                 }
@@ -57,9 +57,9 @@ namespace Training
         public string[] outputTS()
         {
             var participantsList = new StringBuilder();
-            foreach (_User user in participants)
+            foreach (string participant in Participants)
             {
-                participantsList.Append(user.Name + ", ");
+                participantsList.Append(participant + ", ");
             }
             string[] res = { "0" ,DateTime, Location, "" + Capacity, (IsFull ? "o" : "x"), participantsList.ToString()};
             return res;
