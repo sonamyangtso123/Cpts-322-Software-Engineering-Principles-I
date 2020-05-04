@@ -118,11 +118,29 @@ namespace User
             {
                 if(user.Id == id && user.Role == 2)
                 {
-                    ((Customer)user).IsMember = true;
+                    if(((Customer)user).IsMember){
+                        ((Customer)user).IsMember = false;
+                    }
+                    else
+                    {
+                        ((Customer)user).IsMember = true;
+                    }
                     Save();
 
                 }
             }
+        }
+        public bool GetMemberStatus(int id)
+        {
+            foreach (_User user in users)
+            {
+                if (user.Id == id && user.Role == 2)
+                {
+                    return ((Customer)user).IsMember;
+                }
+            }   
+                    
+            return false;
         }
 
         public List<_User> GetAllMember()

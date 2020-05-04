@@ -40,6 +40,19 @@ namespace GUIGymGenie
                     trainerGroup.Visible = true;
                     trainerGroup.Location = new Point(12, 33);
                     refreshBtn2.PerformClick();
+                }else if(LOGGEDIN.Role == 2)
+                {
+                    customerGroup.Visible = true;
+                    customerGroup.Location = new Point(12, 33);
+                    if (UM.GetMemberStatus(LOGGEDIN.Id))
+                    {
+                        tsListGrid.Visible = true;
+                        refBtn.Visible = true;
+                        payBtn.Visible = false;
+                        memberLabel.Text = "Expiration Date: 06/08/2020";
+                        userInfoLabel.Text = "CGM Member " + LOGGEDIN.Name;
+                    }
+                    
                 }
                 emailBox.Text = "";
                 passBox.Text = "";
@@ -118,6 +131,7 @@ namespace GUIGymGenie
             userInfoLabel.Text = "";
             AdminGroup.Visible = false;
             trainerGroup.Visible = false;
+            customerGroup.Visible = false;
             loginGroup.Visible = true;
             logoutbtn.Visible = false;
             LOGGEDIN = null;
@@ -269,9 +283,15 @@ namespace GUIGymGenie
             }
 
             List<_User> memberList = UM.GetAllMember();
+            List<string> memberNameList = new List<string>();
             foreach (_User user in memberList)
             {
-                nameCombo.Items.Add(user.Name);
+                memberNameList.Add(user.Name);
+            }
+            memberNameList.Sort();
+            foreach (string name in memberNameList)
+            {
+                nameCombo.Items.Add(name);
             }
         }
 
@@ -297,5 +317,35 @@ namespace GUIGymGenie
 
             string[] bfr = { name, weight, height, date, detail };
         }
+
+        private void payBtn_Click(object sender, EventArgs e)
+        {
+            PaymentForm pmtForm = new PaymentForm();
+            pmtForm.Show();
+        }
+
+        private void cheatBtn4_Click(object sender, EventArgs e)
+        {
+            if(tsListGrid.Visible == false)
+            {
+                UM.SetMember(LOGGEDIN.Id);
+                tsListGrid.Visible = true;
+                refBtn.Visible = true;
+                payBtn.Visible = false;
+                memberLabel.Text = "Expiration Date: 06/08/2020";
+                userInfoLabel.Text = "CGM Member " + LOGGEDIN.Name;
+            }
+            else if(tsListGrid.Visible == true)
+            {
+                UM.SetMember(LOGGEDIN.Id);
+                tsListGrid.Visible = false;
+                refBtn.Visible = false;
+                payBtn.Visible = true;
+                memberLabel.Text = "Pay for membership";
+                userInfoLabel.Text = LOGGEDIN.Name;
+            }
+        }
+
+
     }
 }

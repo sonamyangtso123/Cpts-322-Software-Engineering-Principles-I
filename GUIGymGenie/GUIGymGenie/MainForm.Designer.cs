@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.loginGroup = new System.Windows.Forms.GroupBox();
             this.errorLabel = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
@@ -110,6 +114,24 @@
             this.TcolIsFull = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TcolParticipants = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cheatBtn3 = new System.Windows.Forms.Button();
+            this.customerGroup = new System.Windows.Forms.GroupBox();
+            this.memberStatus = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label15 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.assignGroup = new System.Windows.Forms.GroupBox();
+            this.refBtn = new System.Windows.Forms.Button();
+            this.payBtn = new System.Windows.Forms.Button();
+            this.tsListGrid = new System.Windows.Forms.DataGridView();
+            this.memberLabel = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cusColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cusColWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cusColHeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cusColComment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cusColViewBtn = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.cheatBtn4 = new System.Windows.Forms.Button();
             this.loginGroup.SuspendLayout();
             this.AdminGroup.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -123,6 +145,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.capUD)).BeginInit();
             this.reportGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).BeginInit();
+            this.customerGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.assignGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tsListGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // loginGroup
@@ -267,38 +295,38 @@
             // 
             // profitChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.profitChart.ChartAreas.Add(chartArea4);
+            chartArea11.Name = "ChartArea1";
+            this.profitChart.ChartAreas.Add(chartArea11);
             this.profitChart.Location = new System.Drawing.Point(6, 413);
             this.profitChart.Name = "profitChart";
             this.profitChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Name = "profit";
-            this.profitChart.Series.Add(series5);
+            series13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            series13.BorderWidth = 2;
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series13.Name = "profit";
+            this.profitChart.Series.Add(series13);
             this.profitChart.Size = new System.Drawing.Size(500, 162);
             this.profitChart.TabIndex = 3;
             this.profitChart.Text = "chart1";
-            title4.Name = "Profit Status";
-            this.profitChart.Titles.Add(title4);
+            title7.Name = "Profit Status";
+            this.profitChart.Titles.Add(title7);
             // 
             // trainerChart
             // 
-            chartArea5.Name = "ChartArea1";
-            this.trainerChart.ChartAreas.Add(chartArea5);
+            chartArea12.Name = "ChartArea1";
+            this.trainerChart.ChartAreas.Add(chartArea12);
             this.trainerChart.Location = new System.Drawing.Point(6, 244);
             this.trainerChart.Name = "trainerChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series6.Name = "Trainer";
-            this.trainerChart.Series.Add(series6);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series14.Name = "Trainer";
+            this.trainerChart.Series.Add(series14);
             this.trainerChart.Size = new System.Drawing.Size(500, 138);
             this.trainerChart.TabIndex = 5;
             this.trainerChart.Text = "chart1";
-            title5.Name = "Training Session Status";
-            this.trainerChart.Titles.Add(title5);
+            title8.Name = "Training Session Status";
+            this.trainerChart.Titles.Add(title8);
             // 
             // nomLabel
             // 
@@ -338,28 +366,28 @@
             // 
             // userChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.userChart.ChartAreas.Add(chartArea6);
-            legend2.Alignment = System.Drawing.StringAlignment.Center;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Name = "Legend1";
-            this.userChart.Legends.Add(legend2);
+            chartArea13.Name = "ChartArea1";
+            this.userChart.ChartAreas.Add(chartArea13);
+            legend3.Alignment = System.Drawing.StringAlignment.Center;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.Name = "Legend1";
+            this.userChart.Legends.Add(legend3);
             this.userChart.Location = new System.Drawing.Point(129, 11);
             this.userChart.Name = "userChart";
             this.userChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Customer";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Member";
-            this.userChart.Series.Add(series7);
-            this.userChart.Series.Add(series8);
+            series15.ChartArea = "ChartArea1";
+            series15.Legend = "Legend1";
+            series15.Name = "Customer";
+            series16.ChartArea = "ChartArea1";
+            series16.Legend = "Legend1";
+            series16.Name = "Member";
+            this.userChart.Series.Add(series15);
+            this.userChart.Series.Add(series16);
             this.userChart.Size = new System.Drawing.Size(377, 211);
             this.userChart.TabIndex = 3;
             this.userChart.Text = "Chart";
-            title6.Name = "Customer and Member Status";
-            this.userChart.Titles.Add(title6);
+            title9.Name = "Customer and Member Status";
+            this.userChart.Titles.Add(title9);
             // 
             // refreshBtn
             // 
@@ -434,10 +462,10 @@
             // userInfoLabel
             // 
             this.userInfoLabel.AutoSize = true;
-            this.userInfoLabel.Location = new System.Drawing.Point(956, 13);
-            this.userInfoLabel.MinimumSize = new System.Drawing.Size(100, 0);
+            this.userInfoLabel.Location = new System.Drawing.Point(902, 12);
+            this.userInfoLabel.MinimumSize = new System.Drawing.Size(150, 0);
             this.userInfoLabel.Name = "userInfoLabel";
-            this.userInfoLabel.Size = new System.Drawing.Size(100, 13);
+            this.userInfoLabel.Size = new System.Drawing.Size(150, 13);
             this.userInfoLabel.TabIndex = 3;
             this.userInfoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -835,11 +863,196 @@
             this.cheatBtn3.UseVisualStyleBackColor = true;
             this.cheatBtn3.Click += new System.EventHandler(this.cheatBtn3_Click);
             // 
+            // customerGroup
+            // 
+            this.customerGroup.Controls.Add(this.memberStatus);
+            this.customerGroup.Controls.Add(this.label16);
+            this.customerGroup.Controls.Add(this.chart2);
+            this.customerGroup.Controls.Add(this.label15);
+            this.customerGroup.Controls.Add(this.chart1);
+            this.customerGroup.Controls.Add(this.assignGroup);
+            this.customerGroup.Controls.Add(this.dataGridView1);
+            this.customerGroup.Location = new System.Drawing.Point(24, 21);
+            this.customerGroup.Name = "customerGroup";
+            this.customerGroup.Size = new System.Drawing.Size(1135, 636);
+            this.customerGroup.TabIndex = 9;
+            this.customerGroup.TabStop = false;
+            this.customerGroup.Text = "Customer Dashboard";
+            this.customerGroup.Visible = false;
+            // 
+            // memberStatus
+            // 
+            this.memberStatus.AutoSize = true;
+            this.memberStatus.Location = new System.Drawing.Point(826, -7);
+            this.memberStatus.MinimumSize = new System.Drawing.Size(100, 0);
+            this.memberStatus.Name = "memberStatus";
+            this.memberStatus.Size = new System.Drawing.Size(100, 13);
+            this.memberStatus.TabIndex = 10;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(275, 441);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(26, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "BMI";
+            // 
+            // chart2
+            // 
+            chartArea14.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea14);
+            this.chart2.Location = new System.Drawing.Point(41, 459);
+            this.chart2.Name = "chart2";
+            series17.BorderWidth = 2;
+            series17.ChartArea = "ChartArea1";
+            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series17.Name = "BMI";
+            this.chart2.Series.Add(series17);
+            this.chart2.Size = new System.Drawing.Size(492, 134);
+            this.chart2.TabIndex = 3;
+            this.chart2.Text = "chart2";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(275, 263);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Weight";
+            // 
+            // chart1
+            // 
+            chartArea15.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea15);
+            this.chart1.Location = new System.Drawing.Point(41, 285);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series18.BorderWidth = 2;
+            series18.ChartArea = "ChartArea1";
+            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series18.Name = "weight";
+            this.chart1.Series.Add(series18);
+            this.chart1.Size = new System.Drawing.Size(492, 134);
+            this.chart1.TabIndex = 2;
+            this.chart1.Text = "chart1";
+            // 
+            // assignGroup
+            // 
+            this.assignGroup.Controls.Add(this.refBtn);
+            this.assignGroup.Controls.Add(this.payBtn);
+            this.assignGroup.Controls.Add(this.tsListGrid);
+            this.assignGroup.Controls.Add(this.memberLabel);
+            this.assignGroup.Location = new System.Drawing.Point(563, 263);
+            this.assignGroup.Name = "assignGroup";
+            this.assignGroup.Size = new System.Drawing.Size(536, 352);
+            this.assignGroup.TabIndex = 1;
+            this.assignGroup.TabStop = false;
+            this.assignGroup.Text = "Assign Training Session";
+            // 
+            // refBtn
+            // 
+            this.refBtn.Location = new System.Drawing.Point(438, 38);
+            this.refBtn.Name = "refBtn";
+            this.refBtn.Size = new System.Drawing.Size(75, 23);
+            this.refBtn.TabIndex = 8;
+            this.refBtn.Text = "Refresh";
+            this.refBtn.UseVisualStyleBackColor = true;
+            this.refBtn.Visible = false;
+            // 
+            // payBtn
+            // 
+            this.payBtn.Location = new System.Drawing.Point(24, 38);
+            this.payBtn.Name = "payBtn";
+            this.payBtn.Size = new System.Drawing.Size(75, 23);
+            this.payBtn.TabIndex = 7;
+            this.payBtn.Text = "Pay Now";
+            this.payBtn.UseVisualStyleBackColor = true;
+            this.payBtn.Click += new System.EventHandler(this.payBtn_Click);
+            // 
+            // tsListGrid
+            // 
+            this.tsListGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tsListGrid.Location = new System.Drawing.Point(24, 84);
+            this.tsListGrid.Name = "tsListGrid";
+            this.tsListGrid.Size = new System.Drawing.Size(489, 237);
+            this.tsListGrid.TabIndex = 0;
+            this.tsListGrid.Visible = false;
+            // 
+            // memberLabel
+            // 
+            this.memberLabel.AutoSize = true;
+            this.memberLabel.Location = new System.Drawing.Point(110, 43);
+            this.memberLabel.MinimumSize = new System.Drawing.Size(300, 13);
+            this.memberLabel.Name = "memberLabel";
+            this.memberLabel.Size = new System.Drawing.Size(300, 13);
+            this.memberLabel.TabIndex = 6;
+            this.memberLabel.Text = "Pay for membership";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cusColDate,
+            this.cusColWeight,
+            this.cusColHeight,
+            this.cusColComment,
+            this.cusColViewBtn});
+            this.dataGridView1.Location = new System.Drawing.Point(41, 32);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1058, 221);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // cusColDate
+            // 
+            this.cusColDate.HeaderText = "Date";
+            this.cusColDate.Name = "cusColDate";
+            this.cusColDate.ReadOnly = true;
+            // 
+            // cusColWeight
+            // 
+            this.cusColWeight.HeaderText = "Weight";
+            this.cusColWeight.Name = "cusColWeight";
+            this.cusColWeight.ReadOnly = true;
+            this.cusColWeight.Width = 70;
+            // 
+            // cusColHeight
+            // 
+            this.cusColHeight.HeaderText = "Height";
+            this.cusColHeight.Name = "cusColHeight";
+            this.cusColHeight.ReadOnly = true;
+            this.cusColHeight.Width = 70;
+            // 
+            // cusColComment
+            // 
+            this.cusColComment.HeaderText = "TrainerComment";
+            this.cusColComment.Name = "cusColComment";
+            this.cusColComment.ReadOnly = true;
+            this.cusColComment.Width = 700;
+            // 
+            // cusColViewBtn
+            // 
+            this.cusColViewBtn.HeaderText = "View";
+            this.cusColViewBtn.Name = "cusColViewBtn";
+            this.cusColViewBtn.ReadOnly = true;
+            this.cusColViewBtn.Width = 50;
+            // 
+            // cheatBtn4
+            // 
+            this.cheatBtn4.Location = new System.Drawing.Point(78, 11);
+            this.cheatBtn4.Name = "cheatBtn4";
+            this.cheatBtn4.Size = new System.Drawing.Size(16, 16);
+            this.cheatBtn4.TabIndex = 9;
+            this.cheatBtn4.UseVisualStyleBackColor = true;
+            this.cheatBtn4.Click += new System.EventHandler(this.cheatBtn4_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1159, 681);
+            this.Controls.Add(this.customerGroup);
             this.Controls.Add(this.cheatBtn3);
             this.Controls.Add(this.trainerGroup);
             this.Controls.Add(this.cheatBtn2);
@@ -849,6 +1062,7 @@
             this.Controls.Add(this.userInfoLabel);
             this.Controls.Add(this.logoutbtn);
             this.Controls.Add(this.loginGroup);
+            this.Controls.Add(this.cheatBtn4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
@@ -871,6 +1085,14 @@
             this.reportGroup.ResumeLayout(false);
             this.reportGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tsGridView)).EndInit();
+            this.customerGroup.ResumeLayout(false);
+            this.customerGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.assignGroup.ResumeLayout(false);
+            this.assignGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tsListGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -948,6 +1170,24 @@
         private System.Windows.Forms.TextBox heightBox;
         private System.Windows.Forms.TextBox weightBox;
         private System.Windows.Forms.ComboBox nameCombo;
+        private System.Windows.Forms.GroupBox customerGroup;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.GroupBox assignGroup;
+        private System.Windows.Forms.DataGridView tsListGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cusColDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cusColWeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cusColHeight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cusColComment;
+        private System.Windows.Forms.DataGridViewLinkColumn cusColViewBtn;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button refBtn;
+        private System.Windows.Forms.Button payBtn;
+        private System.Windows.Forms.Label memberLabel;
+        private System.Windows.Forms.Button cheatBtn4;
+        private System.Windows.Forms.Label memberStatus;
     }
 }
 
