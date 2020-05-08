@@ -4,7 +4,7 @@ import { Alert, Form, Button, Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { loginUser, registerUser } from "../../../_actions/user_actions";
 import { withRouter } from "react-router-dom";
-import logo from "../../../assets/gym.png";
+import logo from "../../../assets/logo512.png";
 
 function RegisterPage(props) {
   const dispatch = useDispatch();
